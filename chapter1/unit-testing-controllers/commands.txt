@@ -1,0 +1,9 @@
+sudo npm install -g karma-cli
+npm install karma
+npm install karma-jasmine karma-chrome-launcher
+
+//this will create a karma.config.js file
+karma init
+
+//to start testing
+karma start

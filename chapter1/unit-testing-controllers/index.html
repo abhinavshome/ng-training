@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="taskApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app/tasksCtrl.js"></script>
+    <style>
+    .critical {
+        color: red;
+    }
+    
+    .normal {
+        color: #444;
+    }
+    
+    .trivial {
+        color: #bbb;
+    }
+    </style>
+</head>
+
+<body ng-controller="TasksCtrl as ctrl">
+    <ul>
+        <li ng-repeat="task in ctrl.tasks" ng-class="ctrl.getTaskClass(task)">
+            {{task.id + '. ' + task.label}} 
+            <span ng-show="task.assignee"> - </span> {{task.assignee}}
+            [{{task.priority}}]
+            <button ng-click="ctrl.increasePriority(task)">&uarr;</button>
+            <button ng-click="ctrl.decreasePriority(task)">&darr;</button>
+        </li>
+    </ul>
+</body>
+
+</html>
