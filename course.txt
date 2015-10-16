@@ -11,6 +11,7 @@ Chapter 1
  - 2 way binding
  - Controllers
  - ngRepeat
+ - ngClass
 
  Chapter 2
  ---------
