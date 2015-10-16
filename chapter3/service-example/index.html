@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="TodoCtrl">
+    <button ng-click="showAdvanced=!showAdvanced">Show/Hide Advanced</button>
+    <br>
+    <br>
+    <div ng-controller="ViewTodoCtrl as ctrl">
+    	<h6>Common Todo list</h6>
+        <ul>
+            <li ng-repeat="todo in ctrl.todos">
+                #{{todo.id}} | {{todo.label}} || {{todo.deadline}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div ng-controller="BasicTodoCtrl as ctrl">
+        <form ng-submit="ctrl.add()">
+            <input type="text" ng-model="ctrl.todo.label">
+            <input type="submit" value="Add">
+        </form>
+        <br>
+        <ul>
+            <li ng-repeat="todo in ctrl.todos">
+                #{{todo.id}} | {{todo.label}} || {{todo.deadline}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div ng-controller="AdvancedTodoCtrl as ctrl" ng-if="showAdvanced">
+        <form ng-submit="ctrl.add()">
+            <input type="text" ng-model="ctrl.todo.label">
+            <select ng-model="ctrl.todo.deadline">
+                <option value="Today">Today</option>
+                <option value="Tomorrow">Tomorrow</option>
+            </select>
+            <input type="submit" value="Add">
+        </form>
+        <br>
+        <ul>
+            <li ng-repeat="todo in ctrl.todos">
+                #{{todo.id}} | {{todo.label}} || {{todo.deadline}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

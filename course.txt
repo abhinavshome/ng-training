@@ -1,0 +1,26 @@
+Chapter 0
+---------
+ - functions in javascript
+ - Javascript is asynchronous
+ - callbacks
+ - promises
+
+Chapter 1
+---------
+ - MVC 
+ - 2 way binding
+ - Controllers
+ - ngRepeat
+
+ Chapter 2
+ ---------
+ - Forms
+
+ Chapter 3
+ ---------
+ - Why Services
+ - Dependency Injection
+ - Service example
+ - Factory vs Service
+ - Server communication
+
