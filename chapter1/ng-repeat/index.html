@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="blogApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="PostsCtrl as ctrl">
+
+<h4>ng-repeat on an array</h4>
+<ul>
+	<li ng-repeat="post in ctrl.posts">{{post.id}}. {{post.title}} [{{post.month}}]</li>
+</ul>
+
+<h4>ng-repeat on an object</h4>
+<ul>
+	<li ng-repeat="(month, post) in ctrl.posts">{{post.id}}. {{post.title}} [{{post.month}}]</li>
+</ul>
+
+
+</body>
+
+</html>
