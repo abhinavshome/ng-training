@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="filtersApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-controller="FilterCtrl as ctrl">
+        <ul ng-controller="FilterCtrl as ctrl">
+            <li>
+                Amount - {{ctrl.amount}}
+            </li>
+            <li>
+                Amount - Default Currency: {{ctrl.amount | currency}}
+            </li>
+            <li>
+                <!-- Using the English pound sign -->
+                Amount - INR Currency: {{ctrl.amount | currency:'&#163 '}} </li>
+            <li>
+                Amount - Number: {{ctrl.amount | number}}
+            </li>
+            <li>
+                Amount - No. with 4 decimals: {{ctrl.amount | number:4}}
+            </li>
+            <li>
+                Chained filters: {{ctrl.name | lowercase | limitTo:5 }}
+            </li>
+            <li>
+                Name - lowercase filter: {{ctrl.name | lowercase}}
+            </li>
+            <li>
+                Name - uppercase filter: {{ctrl.name | uppercase}}
+            </li>
+            <li>
+                The JSON Filter: {{ctrl.obj | json}}
+            </li>
+            <li>
+                Timestamp: {{ctrl.startTime}}
+            </li>
+            <li>
+                Default Date filter: {{ctrl.startTime | date}}
+            </li>
+            <li>
+                Medium Date filter: {{ctrl.startTime | date:'medium'}}
+            </li>
+            <li>
+                Custom Date filter: {{ctrl.startTime | date:'M/dd, yyyy'}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+</body>
+
+</html>

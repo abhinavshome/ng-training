@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="customFilterApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    Enter a number
+    <input type="text" ng-model="num">
+    <h2>{{num | ordinal}}</h2>
+    <br> Enter a string
+    <input type="text" ng-model="str">
+    <input type="number" ng-model="position">
+    <h2>{{str | capitalize:position}}</h2>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+toEqual
+The most basic of Jasmine matchers, the toEqual takes a second value and does a deep equality check between the two objects. In the case of an object, all the fields have to match. In the case of an array, all the array elements have to match.
+
+toBe
+The toBe matcher checks for reference, and expects both items passed to the expect and the matcher to be the exact same object reference.
+
+toBeTruthy
+Checks the value passed to the matcher to pass the JavaScript concept of true. Nonnull objects, nonempty strings, nonzero numbers, and the Boolean true all evaluate to be truthy in JavaScript.
+
+toBeFalsy
+Checks the value passed to the matcher to pass the JavaScript concept of false. Null values, undefined variables, empty strings, zero, and false all evaluate to be falsy in JavaScript.
+￼Jasmine: Spec Style of Testing | 43
+
+toBeDefined
+Ensures the reference passed to the expect is defined (a value is assigned to the reference, that is).
+
+toBeUndefined
+Checks if the reference passed to the expect is undefined or not set.
+
+toBeNull
+Checks if the reference passed to the expect is null.
+
+toContain
+Checks if the array passed to the expect contains the element passed to the matcher, toContain.
+
+toMatch
+Used for regular expression checks when the first argument to the expect is a string that needs to match a specific regular expression pattern.

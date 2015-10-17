@@ -1,0 +1,45 @@
+<!-- File: chapter6/public/http-get-example.html -->
+<html ng-app="blogApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+    </script>
+    <script src="app.js"></script>
+    <style>
+		.post div{
+			background-color: lightpink;
+		}
+		.post span {
+			display: block;
+			background-color: lightgreen;
+			font-size: smaller;
+			text-align: right;
+			margin-bottom: 20px;
+		}
+    </style>
+</head>
+<body ng-controller="PostsCtrl as ctrl">
+    <h1>Posts from server</h1>
+    <div ng-repeat="post in ctrl.posts" class="post">
+        <div>{{post.label}}</div>
+        <span>{{post.author}}</span>
+    </div>
+
+    <h2>Fetch first post</h2>
+    <button ng-click="ctrl.getFirstPost()">Fetch first</button>
+    <div class="post">
+        <div>{{ctrl.firstPost.label}}</div>
+        <span>{{ctrl.firstPost.author}}</span>
+    </div>
+
+    <h1>Create a new post</h1>
+    <form ng-submit="ctrl.addPost()">
+    	<input type="text" ng-model="ctrl.post.label"><br>
+    	<input type="text" ng-model="ctrl.post.author"><br>
+    	<input type="submit" value="Create">
+    </form>
+
+</body>
+
+</html>

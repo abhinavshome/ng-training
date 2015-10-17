@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+    label {
+        width: 100px;
+        display: inline-block;
+        height: 30px;	
+    }
+    </style>
+</head>
+
+<body ng-controller="UserCtrl as ctrl">
+    <form ng-submit="ctrl.submit()">
+        <label>User</label>
+        <input type="text" ng-model="ctrl.user.username">
+        <br>
+        <label>Password</label>
+        <input type="password" ng-model="ctrl.user.password">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

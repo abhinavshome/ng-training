@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="blogApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app/app.js"></script>
+</head>
+
+<body ng-controller="PostCtrl as ctrl">
+
+<ul>
+	<li ng-repeat="post in ctrl.posts">
+		{{post.id}} - {{post.title}}
+	</li>
+</ul>
+
+</body>
+
+</html>

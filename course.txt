@@ -11,17 +11,38 @@ Chapter 1
  - 2 way binding
  - Controllers
  - ngRepeat
- - ngClass
+ - more directives
+ - unit testing controllers
 
  Chapter 2
  ---------
- - Forms
+ - Getting objects from forms
+ - Basic form validation
+ - Form error handling (error classes)
+ - 
 
  Chapter 3
  ---------
  - Why Services
  - Dependency Injection
+   - safe style
+   - unsafe style 
  - Service example
  - Factory vs Service
  - Server communication
+   - GET, POST, PUT, DELETE
+ - $q
+
+ chapter 6
+ ---------
+ - basic service test
+ - testing controller having service dependencies
+ - all tests are independent
+ - 
+ 
+
+ Advanced topics
+ ---------------
+ - configuring http defaults
+ - 
 

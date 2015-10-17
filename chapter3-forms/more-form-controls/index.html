@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+    label {
+        font-weight: bold;
+    }
+    
+    input,
+    textarea {
+        display: block;
+    }
+    </style>
+</head>
+
+<body ng-controller="UserCtrl as ctrl">
+    <form ng-submit="ctrl.submit()">
+        <label>User</label>
+        <input type="text" ng-model="ctrl.user.username">
+        <br>
+        <label>Password</label>
+        <input type="password" ng-model="ctrl.user.password">
+        <br>
+        <label>Adress</label>
+        <textarea ng-model="ctrl.user.address"></textarea>
+        <br>
+        <label>Agree conditions?</label>
+        <input type="checkbox" ng-model="ctrl.user.agree">
+        <br>
+        <label>Submitting yourself?</label>
+        <input type="checkbox" ng-model="ctrl.user.himself" ng-true-value="YES" ng-false-value="NO">
+        <br>
+        <label>Gender</label>
+        <div ng-init="ctrl.user.gender='female'">
+            <span>M</span>
+            <input type="radio" name="gender" ng-model="ctrl.user.gender" value="male">
+            <span>F</span>
+            <input type="radio" name="gender" ng-model="ctrl.user.gender" value="female">
+        </div>
+        <br>
+        <label>City</label>
+        <div ng-init="ctrl.user.city = 'New Delhi'">
+            <select ng-model="ctrl.user.city">
+                <option value="Banglore">Banglore</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Other">None of the above</option>
+            </select>
+        </div>
+        <br>
+        <label>Country Id</label>
+        <div ng-init="ctrl.user.countryId=2">
+            <select ng-model="ctrl.user.countryId" ng-options="c.id as c.label for c in ctrl.countries"></select>
+        </div>
+        <br>
+        <label>Country</label>
+        <div ng-init="ctrl.user.country = ctrl.countries[0]">
+            <select ng-model="ctrl.user.country" ng-options="c as c.label group by c.continent for c in ctrl.countries"></select>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <pre>{{ctrl.user | json}}</pre>
+</body>
+
+</html>
