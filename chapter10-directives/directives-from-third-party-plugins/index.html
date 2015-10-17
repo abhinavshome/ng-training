@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="dateApp">
+
+<head>
+    <title>ng-training</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <style>
+    #slider {
+        margin: 10px;
+    }
+    </style>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div>
+        <div slider ng-model="height" min="100" max="200"></div>
+        <h2>{{height}} cms</h2>
+        <input type="text" ng-model="userHeight">
+        <button ng-click="height = userHeight">Set Height</button>
+    </div>
+</body>
+
+</html>

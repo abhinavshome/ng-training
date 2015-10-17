@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="tabsApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+    body {
+        margin: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <tabs>
+        <tab title="First Tab">
+            <input type="text" ng-model="name"> {{name}}
+        </tab>
+        <tab title="Second Tab">
+            2nd tab
+        </tab>
+    </tabs>
+</body>
+
+</html>

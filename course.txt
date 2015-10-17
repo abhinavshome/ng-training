@@ -46,3 +46,7 @@ Chapter 1
  - configuring http defaults
  - 
 
+ chapter10
+ ---------
+  - scope possible values
+
