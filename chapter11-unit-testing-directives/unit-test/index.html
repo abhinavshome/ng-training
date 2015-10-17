@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+    td {
+        background-color: lightgray;
+        padding: 10px;
+    }
+    </style>
+</head>
+
+<body ng-controller="TodoCtrl as ctrl">
+    <table>
+        <tr ng-repeat="todo in ctrl.todos">
+            <td> {{todo.id}} </td>
+            <td> {{todo.label}} </td>
+            <td> {{todo.assignee}} </td>
+            <td>
+                <priority-widget item="todo" width-per-point="20" color-function="ctrl.colorChooser(priority)"></priority-widget>
+            </td>
+                        <!-- <td>{{getColorCode(todo.priority)}}</td> -->
+
+        </tr>
+    </table>
+</body>
+
+</html>
