@@ -31,7 +31,6 @@ Chapter 1
  - Factory vs Service
  - Server communication
    - GET, POST, PUT, DELETE
- - $q
 
  chapter 6
  ---------
@@ -41,18 +40,11 @@ Chapter 1
  - 
  
 
- Advanced topics
- ---------------
- - configuring http defaults
- - 
+
 
  chapter10
  ---------
   - scope possible values
 
 
-  //
-
-  q
-  interceptors
 
