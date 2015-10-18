@@ -15,7 +15,8 @@ describe('Stock Widget Directive Behavior', function() {
     it('should have functions and data on scope correctly',
         function() {
             // Step 2
-            var scope = rootScope.$new(), colorChooserCalled = '';
+            var scope = rootScope.$new(),
+                colorChooserCalled = '';
             scope.todo = {
                 priority: 3
             };
