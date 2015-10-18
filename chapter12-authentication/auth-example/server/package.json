@@ -1,0 +1,18 @@
+{
+  "name": "restapp",
+  "version": "0.1.0",
+  "description": "myRESTfulApp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Arvind Ravulavaru",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jwt-simple": "^0.2.0",
+    "morgan": "^1.6.1"
+  }
+}
