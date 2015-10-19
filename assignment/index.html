@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="shopApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="../resources/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+    a {
+    	text-decoration: underline;
+    	color: blue;
+    	cursor: pointer;
+    }
+    td {
+        background-color: lightpink;
+        padding: 5px;
+    }
+    </style>
+</head>
+
+<body ng-controller="ShopCtrl as ctrl">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr ng-repeat="item in ctrl.cart">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+        </tr>
+    </table>
+	<hr>
+	{{ctrl.totalCartValue}}
+	<hr>
+    <table>
+        <tr ng-repeat="product in ctrl.inventory">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><a ng-click="ctrl.addProductToCart(product)">add to cart</a></td>
+        </tr>
+    </table>
+    <hr>
+    <form ng-submit="ctrl.addToInventory()">
+        <input type="text" ng-model="ctrl.item.name">
+        <br>
+        <input type="number" ng-model="ctrl.item.price">
+        <br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+
+</html>
