@@ -7,13 +7,17 @@
     <script src="app.js"></script>
     <style>
     a {
-    	text-decoration: underline;
-    	color: blue;
-    	cursor: pointer;
+        text-decoration: underline;
+        color: blue;
+        cursor: pointer;
     }
+    
     td {
         background-color: lightpink;
         padding: 5px;
+    }
+    form span {
+        color: red;
     }
     </style>
 </head>
@@ -31,9 +35,8 @@
             <td>{{item.quantity}}</td>
         </tr>
     </table>
-	<hr>
-	{{ctrl.totalCartValue}}
-	<hr>
+    <hr> {{ctrl.totalCartValue}}
+    <hr>
     <table>
         <tr ng-repeat="product in ctrl.inventory">
             <td>{{product.name}}</td>
@@ -42,12 +45,22 @@
         </tr>
     </table>
     <hr>
-    <form ng-submit="ctrl.addToInventory()">
-        <input type="text" ng-model="ctrl.item.name">
+    <form name="addProductForm" ng-submit="ctrl.addToInventory()">
+        <input name="name" type="text" ng-model="ctrl.item.name" required ng-minlength="5">
+        
+        <span ng-show="addProductForm.$dirty && addProductForm.name.$error.required">
+            required
+        </span>
+        <span ng-show="addProductForm.$dirty && addProductForm.name.$error.minlength">
+            minimum length is 5
+        </span>
         <br>
-        <input type="number" ng-model="ctrl.item.price">
+        <input name="price" type="number" ng-model="ctrl.item.price" required>
+        <span ng-show="addProductForm.$dirty && addProductForm.price.$error.required">
+            required
+        </span>
         <br>
-        <input type="submit" value="Add">
+        <input type="submit" value="Add" ng-disabled="addProductForm.$invalid">
     </form>
 </body>
 
