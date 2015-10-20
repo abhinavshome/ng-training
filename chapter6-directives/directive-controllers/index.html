@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="tabApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="../../resources/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .tab-headers span{
+            background-color: lightgray;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .tab-headers span.selected {
+            background-color: navy;
+            color: white;
+        }
+        .tab-content {
+            margin: 5px 0;
+            padding: 10px;
+            border: 2px solid navy;
+        }
+    </style>
+</head>
+
+<body ng-controller="TabCtrl as ctrl">
+    <tabs>
+        <tab title="First Tab">
+            This is the first tab. The app started at {{ctrl.startedTime | date}}
+        </tab>
+        <tab title="Second Tab">
+            This is the second tab
+            <input type="text" ng-model="ctrl.name"> {{ctrl.name}}
+        </tab>
+    </tabs>
+</body>
+
+</html>
