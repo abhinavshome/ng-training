@@ -7,11 +7,11 @@
     <script src="app.js"></script>
 </head>
 
-<body ng-controller="PostsCtrl as ctrl">
-    <h1>{{ctrl.blogTitle}}</h1>
-    <input type="text" ng-model="ctrl.blogTitle">
+<body ng-controller="PostsCtrl">
+    <h1>{{blogTitle}}</h1>
+    <input type="text" ng-model="blogTitle">
     <br>
-    <button ng-click="ctrl.resetTitle()">Reset Title</button>
+    <button ng-click="resetTitle()">Reset Title</button>
 </body>
 
 </html>

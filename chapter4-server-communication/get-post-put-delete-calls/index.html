@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="postApp">
+
+<head>
+    <title>ng-training</title>
+    <script src="../../resources/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+    .notice {
+        background-color: lightgreen;
+        padding: 5px;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    td {
+        background-color: lightgray;
+        padding: 5px;
+    }
+    
+    th {
+        background-color: navy;
+        color: white;
+        padding: 5px;
+    }
+    </style>
+</head>
+
+<body ng-controller="PostCtrl as ctrl">
+    <h2>Add to posts</h2>
+    <form ng-submit="ctrl.addPost()">
+        Enter title
+        <input type="text" ng-model="ctrl.post.title">
+        <br> Enter author
+        <input type="text" ng-model="ctrl.post.author">
+        <br>
+        <input type="submit" value="Add">
+        <br>
+    </form>
+    <div ng-show="ctrl.postToUpdate">
+        <h2>Update the post with id {{ctrl.postToUpdate.id}}</h2> 
+        <form ng-submit="ctrl.updatePost()">
+            Enter new title
+            <input type="text" ng-model="ctrl.postToUpdate.title">
+            <br> Enter new author
+            <input type="text" ng-model="ctrl.postToUpdate.author">
+            <br>
+            <input type="submit" value="Update">
+            <br>
+        </form>
+    </div>
+    <h2>Posts from server</h2>
+    <button ng-click="ctrl.refreshPosts()">refresh table</button>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>author</th>
+            <th>actions</th>
+        </tr>
+        <tr ng-repeat="post in ctrl.posts">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.author}}</td>
+            <td>
+                <button ng-click="ctrl.showUpdatePostForm(post)">update</button>
+                <button ng-click="ctrl.deletePost(post)">delete</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

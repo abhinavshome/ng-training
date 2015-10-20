@@ -1,11 +1,4 @@
-var express = require('express');
-var router = express.Router();
-
-var auth = require('./auth.js');
-var products = require('./products.js');
-var user = require('./users.js');
-var posts = require('./posts.js');
-
+<pre>
 /*
  * Routes that can be accessed by any one
  */
@@ -33,5 +26,4 @@ router.get('/api/v1/admin/user/:id', user.getOne);
 router.post('/api/v1/admin/user/', user.create);
 router.put('/api/v1/admin/user/:id', user.update);
 router.delete('/api/v1/admin/user/:id', user.delete);
-
-module.exports = router;
+</pre>
