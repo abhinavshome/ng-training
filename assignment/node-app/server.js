@@ -7,52 +7,52 @@ var app            = express();
 
 app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); 					// log every request to the console
-app.use(bodyParser()); 						// pull information from html in POST
+app.use(bodyParser()); 						// pull information from html in product
 app.use(methodOverride()); 					// simulate DELETE and PUT
 
 
 var router = express.Router();
 
-var posts = [
-  {id: 1, label: 'First post', author: 'Ram'},
-  {id: 2, label: 'Second post', author: 'Mohan'},
-  {id: 3, label: 'Middle post', author: 'Jay'},
-  {id: 4, label: 'Last post', author: 'Kishan'},
-  {id: 5, label: 'Really the last post', author: 'Sachin'}
+var products = [
+  {id: 1, label: 'First product', price: 22},
+  {id: 2, label: 'Second product', price: 22},
+  {id: 3, label: 'Middle product', price: 11},
+  {id: 4, label: 'Last product', price: 33},
+  {id: 5, label: 'Really the last product', price: 12}
 ];
 var lastId = 6;
 
-router.get('/post', function(req, res) {
-  res.send(posts);
+router.get('/product', function(req, res) {
+  res.send(products);
 });
-router.post('/post', function(req, res) {
-  var post = req.body;
-  post.id = lastId;
+router.post('/product', function(req, res) {
+  var product = req.body;
+  product.id = lastId;
   lastId++;
-  posts.push(post);
-  res.send(post);
+  products.push(product);
+  res.send(product);
 });
 
-router.get('/post/:id', function(req, res) {
-  for (var i = 0; i < posts.length; i++) {
-    if (posts[i].id == req.params.id) {
-      res.send(posts[i]);
+router.get('/product/:id', function(req, res) {
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].id == req.params.id) {
+      res.send(products[i]);
       break;
     }
   }
-  res.send({msg: 'post not found'}, 404);
+  res.send({msg: 'product not found'}, 404);
 });
 
-router.put('/post/:id', function(req, res) {
-  for (var i = 0; i < posts.length; i++) {
-    if (posts[i].id == req.params.id) {
-      posts[i] = req.body;
-      posts[i].id = req.params.id;
-      res.send(posts[i]);
+router.put('/product/:id', function(req, res) {
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].id == req.params.id) {
+      products[i] = req.body;
+      products[i].id = req.params.id;
+      res.send(products[i]);
       break;
     }
   }
-  res.send({msg: 'post not found'}, 404);
+  res.send({msg: 'product not found'}, 404);
 });
 
 router.post('/login', function(req, res) {
