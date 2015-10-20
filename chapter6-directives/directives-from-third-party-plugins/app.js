@@ -1,5 +1,17 @@
 angular
-    .module("dateApp", [])
+    .module("userApp", [])
+    .controller('UserCtrl', function () {
+        var self = this;
+        self.user = {
+            name: 'Manoj',
+            weight: 75,
+            height: 122,
+            bp: 140
+        }
+        self.submit = function () {
+            console.log('Adding patients record', self.user);
+        }
+    })
     .directive('slider', function() {
         return {
             scope: {
@@ -11,7 +23,8 @@ angular
                 	max: parseInt(attributes.max)
                 });
 
-                scope.ngModel = attributes.min;
+                //set default value as min
+                scope.ngModel = scope.ngModel || attributes.min;
 
                 //change angular variable when jquery plugin changes
                 element.on("slide", function(event, ui) {

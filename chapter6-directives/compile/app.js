@@ -23,6 +23,7 @@ angular
                     $(tab).attr('ng-click', 'selectTab(' + index + ')');
                     tabHtml += "<a ng-class='{selected: currentTab == " + index + "}' ng-click='selectTab(" + index + ")'>" + $(tab).attr('title') + "</a>";
                 });
+                tabHtml += "</div>";
                 element.prepend(tabHtml);
 
                 //add some css

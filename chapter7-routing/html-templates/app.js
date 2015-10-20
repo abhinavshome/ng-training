@@ -10,6 +10,13 @@ angular
         this.ip = ip;
         this.message = message;
     })
+    .controller('IpWoResolveCtrl', function($http) {
+        var self = this;
+        $http.get('http://jsonip.com').then(function (response) {
+            self.ip = response.data;
+        });
+        self.message = 'to IpCtrl';
+    })
     .factory('PostService', function() {
         var posts = [{
             id: 1,
@@ -41,7 +48,7 @@ angular
             }
         }
     })
-    .config(['$routeProvider', function($routeProvider) {
+    .config(function($routeProvider) {
         $routeProvider
             .when('/', {
                 controller: 'PostListCtrl as ctrl',
@@ -64,9 +71,13 @@ angular
                     }
                 }
             })
+            .when('/my-ip-wo-resolve', {
+                controller: 'IpWoResolveCtrl as ipCtrl',
+                templateUrl: 'ip.html'
+            })
             .when('/query', {
                 template: '<pre>{{qCtrl.routeParams | json}}<pre>',
-                controller: function ($routeParams) {
+                controller: function($routeParams) {
                     this.routeParams = $routeParams;
                 },
                 controllerAs: 'qCtrl'
@@ -74,4 +85,4 @@ angular
             .otherwise({
                 redirectTo: '/'
             });
-    }]);
+    });

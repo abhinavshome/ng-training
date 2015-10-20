@@ -32,5 +32,5 @@ describe('Controller Test: TasksCtrl', function() {
 
     it("should increase priority when increase btn clicked", function () {
         
-    })
-})
+    });
+});

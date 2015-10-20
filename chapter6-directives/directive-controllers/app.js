@@ -32,6 +32,8 @@ angular
                 };
                 $scope.selectTab = function(index) {
                     currentIndex = index;
+
+                    //make current tab selected and remaining unselected
                     for (var i = 0; i < $scope.tabs.length; i++) {
                         $scope.tabs[i].scope.selected = currentIndex === i;
                     }
