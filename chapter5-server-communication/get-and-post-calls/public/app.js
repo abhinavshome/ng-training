@@ -1,33 +1,48 @@
-    angular
-        .module('blogApp', [])
-        .controller('PostsCtrl', function($http) {
-            var self = this;
-            self.posts = [];
+angular.module('postApp', [])
+    .controller('PostCtrl', function(PostService) {
+        var self = this;
 
-            self.getPosts = function() {
-                $http.get('/api/post').then(function(response) {
-                    self.posts = response.data;
-                }, function(error) {
-                    console.error('Error while fetching posts');
-                });
-            };
-
-            self.getPosts();
-
-            self.getFirstPost = function() {
-                $http.get('api/post/1').then(function(response) {
-                    self.firstPost = response.data;
-                });
-            };
-
-            self.addPost = function() {
-                $http.post('/api/post', self.post).then(function(response) {
-                    console.log(response);
-                    self.getPosts();
-                }, function(error) {
-                    console.log(error)
-                });
-            }
-
-
+        PostService
+        .getAll()
+        .then(function(response) {
+            self.posts = response.data;
+        }, function(response) {
+            console.log(response);
         });
+
+        self.addPost = function() {
+            console.log(self.post);
+            PostService
+                .add(self.post)
+                .then(function(response) {
+                    console.log(response.data);
+                }, function(response) {
+                    console.log(response);
+                });
+        }
+
+        self.updatePost = function () {
+            PostService
+                .update(self.posts[0])
+                .then(function(response) {
+                    console.log(response.data);
+                }, function(response) {
+                    console.log(response);
+                });
+        }
+    })
+    .service('PostService', function ($http) {
+        var self = this;
+
+        self.getAll = function () {
+            return $http.get('/api/post');
+        }
+
+        self.add = function (post) {
+            return $http.post('/api/post', post);
+        }
+
+        self.update = function (post) {
+            return $http.put('/api/post/' + post.id, post);
+        }
+    })

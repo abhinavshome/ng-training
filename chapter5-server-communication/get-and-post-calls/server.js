@@ -19,7 +19,6 @@ var posts = [
   {id: 3, label: 'Middle post', author: 'Jay'},
   {id: 4, label: 'Last post', author: 'Kishan'},
   {id: 5, label: 'Really the last post', author: 'Sachin'}
-
 ];
 var lastId = 6;
 
