@@ -37,7 +37,7 @@
 - Chapter 7 - Routing using ngRoute
 	- Basic routing example
 	- More routing concepts
-- Chapter 8 - AUthentication and a good project setup
+- Chapter 8 - Authentication and a good project setup
 	- An app supporting authentication and authorization with good project structure
 - Chapter 9 - Unit testing
 	- Unit testing controllers
