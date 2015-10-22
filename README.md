@@ -1,3 +1,5 @@
+`P.S. The code samples are updated to work with both Windows and Mac along with instructions. Should be done by Oct 27`
+
 # AngularJS training course material
 
 ## Contents
