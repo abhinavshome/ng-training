@@ -1,6 +1,6 @@
 `P.S. The code samples are being updated to work with both Windows and Mac along with instructions. Should be done by Oct 27.`
 
-'Participants for past trainings can request for a 15 minute Skype/Webex/Hangout call. A call will be scheduled for next available slot and their doubts will be addressed. Please contact at 08860266561 or kabhinav.iitg@gmail.com for getting a call scheduled.'
+`Participants for past trainings can request for a 15 minute Skype/Webex/Hangout call. A call will be scheduled for next available slot and their doubts will be addressed. Please contact at 08860266561 or kabhinav.iitg@gmail.com for getting a call scheduled.`
 
 # AngularJS training course material
 
