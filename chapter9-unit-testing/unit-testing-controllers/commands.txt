@@ -1,9 +1,8 @@
+//globally install karma
 sudo npm install -g karma-cli
-npm install karma
-npm install karma-jasmine karma-chrome-launcher
 
-//this will create a karma.config.js file
-karma init
+//local installs
+npm install
 
 //to start testing
 karma start
