@@ -24,7 +24,7 @@ angular.module('todoApp', [])
         var self = this;
         self.todos = TodoService.list();
     })
-    .factory('TodoService', function(Todo) {
+    .factory('TodoService', function() {
         console.log('TodoService called');
         var todos =  [];
 
@@ -38,5 +38,5 @@ angular.module('todoApp', [])
             }
         }
     })
-   ]
+   
 ;
