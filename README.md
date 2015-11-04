@@ -6,7 +6,7 @@
 
 ## Contents
 
-- Chapter 0 - JavaScript basics
+- Chapter 0- JavaScript basics
 	- Functions
 	- Classes and Objects
 	- Asynchronous nature of JavaScript
