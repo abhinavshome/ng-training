@@ -35,15 +35,23 @@ var postsApi = {
 var posts = [{
     author: 'Ram',
     title: 'post 1',
+    rating: 2,
     id: 1
 }, {
     author: 'Shyam',
     title: 'post 2',
+    rating: 3,
     id: 2
 }, {
     author: 'Manohar',
     title: 'post 3',
+    rating: 5,
     id: 3
+},{
+    author: 'John',
+    title: 'post 4',
+    rating: 1,
+    id: 4
 }];
 
 module.exports = postsApi;

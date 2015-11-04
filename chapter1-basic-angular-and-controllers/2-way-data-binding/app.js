@@ -1,9 +1,9 @@
 angular
     .module('blogApp', [])
-    .controller('PostsCtrl', function($scope) {
-        $scope.blogTitle = "My Posts";
+    .controller('PostsCtrl', function() {
+        this.blogTitle = "My Posts";
 
-        $scope.resetTitle = function() {
+        this.resetTitle = function() {
             this.blogTitle = "My Blog Posts";
         }
     });
