@@ -1,21 +1,22 @@
 angular
     .module('shopApp.layout.controllers', [])
-    .controller("HeaderCtrl", ['$location', 'UserAuthFactory', 'AuthenticationFactory',
-        function($location, UserAuthFactory, AuthenticationFactory) {
-            var self = this;
-            self.isActive = function(route) {
-                return route === $location.path();
-            }
-
-            self.logout = function() {
-                UserAuthFactory.logout();
-            }
-
-            self.auth = AuthenticationFactory.getAuth();
+    .controller("HeaderCtrl", function(AuthService, $location, $rootScope) {
+        var self = this;
+        self.isActive = function(route) {
+            return route === $location.path();
         }
-    ])
-    .controller("HomeCtrl", [
-        function() {
+
+        self.logout = function() {
+            AuthService.logout();
+            self.currentUser = undefined;
+            $rootScope.showMenu = false;
+            $location.path('/login');
+        }
+
+        self.auth = AuthService.getAuth();
+        console.log(self.auth);
+    })
+    .controller("HomeCtrl", function() {
             this.name = "Home Controller";
         }
-    ]);
+    );

@@ -1,71 +1,78 @@
 angular
     .module('shopApp.auth.services', [])
-    .factory('AuthenticationFactory', function($window) {
-        var auth = {
-            isLogged: false,
-            user: undefined,
-            token: undefined
-        }
+    .factory('AuthService', function($window) {
+
+        //load auth from local storage when service loads
+        var auth = JSON.parse($window.sessionStorage.auth || "{}");
 
         return {
+            isLoggedIn: function() {
+                return auth.user != undefined;
+            },
+            getCurrentUser: function() {
+                return auth.user;
+            },
+            setCurrentUser: function(user) {
+                auth.user = user;
+                $window.sessionStorage.auth = JSON.stringify(auth);
+                console.log('set auth to', auth, 'sessionStorage ', $window.sessionStorage.auth);
+            },
             getAuth: function () {
                 return auth;
             },
-            check: function() {
-                if ($window.sessionStorage.token && $window.sessionStorage.user) {
-                    auth.isLogged = true;
-                    console.log($window.sessionStorage.user);
-                    auth.user = JSON.parse($window.sessionStorage.user);
-                    auth.token = $window.sessionStorage.token;
-                } else {
-                    auth.isLogged = false;
-                    delete auth.user;
-                    delete auth.token;
-                }
-                return auth;
+            getToken: function() {
+                return auth.token;
             },
-            setAuth: function (isLogged, user, token) {
-                auth.isLogged = isLogged;
-                auth.user = user;
+            setToken: function(token) {
                 auth.token = token;
-            }
-        }
-
-    })
-    .factory('UserAuthFactory', function($window, $location, $http, AuthenticationFactory, BASE_URL) {
-        return {
-            login: function(username, password) {
-                return $http.post(BASE_URL + '/login', {
-                    username: username,
-                    password: password
-                });
+                $window.sessionStorage.auth = JSON.stringify(auth);
             },
             logout: function() {
-                var auth = AuthenticationFactory.getAuth();
-                if (auth.isLogged) {
+                auth.user = undefined;
+                auth.token = undefined;
+                $window.sessionStorage.auth = JSON.stringify(auth);
+            },
+            isAuthorised: function(access) {
+                //if public url, everyone is authorised
+                if(!access || !access.requiredLogin)
+                    return true;
 
-                    auth.isLogged = false;
-                    delete auth.user;
-                    delete auth.userRole;
+                //if login protected and aloowed to all roles, then allowed
+                if(auth.user && access.allowedRoles == 'all')
+                    return true;
 
-                    delete $window.sessionStorage.token;
-                    delete $window.sessionStorage.user;
-                    delete $window.sessionStorage.userRole;
-
-                    $location.path("/login");
+                //if user has proper roles, only then allowed
+                for (var i = 0; i < access.allowedRoles.length; i++) {
+                    if (access.allowedRoles[i] == auth.user.role)
+                        return true;
                 }
+
+                //no conditions met, so not allowed
+                return false;
 
             }
         }
+
     })
-    .factory('TokenInterceptor', function($q, $window) {
+    .factory('LoginService', function($location, $http, AuthService, BASE_URL) {
+        return {
+            login: function(user) {
+                return $http.post(BASE_URL + '/login', user);
+            },
+            logout: function() {
+                AuthService.logout();
+                $location.path('/login');
+            }
+        }
+    })
+    .factory('TokenInterceptor', function($q, AuthService) {
         return {
             request: function(config) {
                 config.headers = config.headers || {};
-                if ($window.sessionStorage.token) {
-                    config.headers['X-Access-Token'] = $window.sessionStorage.token;
-                    config.headers['X-Key'] = $window.sessionStorage.user;
-                    config.headers['Content-Type'] = "application/json";
+                if (AuthService.getToken()) {
+                    config.headers['X-Access-Token'] = AuthService.getToken();
+                    // config.headers['X-Key'] = $window.sessionStorage.user;
+                    // config.headers['Content-Type'] = "application/json";
                 }
                 return config || $q.when(config);
             },

@@ -1,6 +1,6 @@
 <div class="login">
 <legend>Login Form</legend>
-
+<form ng-submit="loginCtrl.login()">
 <div class="form-group">
   <label for="username">Username</label>
   <input type="text" class="form-control" id="username" placeholder="Username" ng-model="loginCtrl.user.username">
@@ -12,7 +12,9 @@
 </div>
 
 
-<button type="button" ng-click="loginCtrl.login()" class="btn btn-primary">Submit</button>
+<input type="submit" value="Login"/>
+
+</form>
 <div>
 	User one of these 2 user credentials admin/admin or user/user
 </div>
