@@ -1,0 +1,11 @@
+<style>
+    .selected {background-color: blue}
+</style>
+   <div class="tab-headers">
+    <span ng-repeat="tab in tabs" 
+    ng-click="selectTab($index)" 
+    ng-class="{selected: isSelectedTab($index)}">
+     {{tab.title}}
+    </span>
+</div> 
+<div ng-transclude></div> 
