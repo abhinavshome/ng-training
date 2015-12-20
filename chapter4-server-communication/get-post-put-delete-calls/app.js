@@ -1,72 +1,57 @@
-angular.module('postApp', [])
-    .controller('PostCtrl', function(PostService) {
+angular
+    .module('todoApp', [])
+    .controller('TodoCtrl', function($http, TodoService) {
         var self = this;
 
-        self.refreshPosts = function() {
-            PostService
+        function loadTodos() {
+            TodoService
                 .getAll()
                 .then(function(response) {
-                    self.posts = response.data;
-                }, function(response) {
-                    console.log(response);
+                    self.todos = response.data;
                 });
         }
 
-        self.refreshPosts();
+        loadTodos();
 
-        self.addPost = function() {
-            console.log(self.post);
-            PostService
-                .add(self.post)
+        self.addTodo = function() {
+            TodoService
+                .add(self.newTodo)
                 .then(function(response) {
-                    self.refreshPosts();
-                }, function(response) {
-                    console.log(response);
+                    loadTodos();
                 });
-        }
+        };
 
-        self.showUpdatePostForm = function(post) {
-            self.postToUpdate = angular.copy(post);
-        }
+        self.editTodo = function(todo) {
+            self.todoToEdit = angular.copy(todo);
+        };
 
-        self.updatePost = function(post) {
-            PostService
-                .update(self.postToUpdate)
+        self.updateTodo = function() {
+            $http
+                .put(url + self.todoToEdit.id, self.todoToEdit)
                 .then(function(response) {
-                    self.refreshPosts();
-                }, function(response) {
-                    console.log(response);
+                    console.log('response after update call ', response);
+                    loadTodos();
                 });
-        }
+        };
 
-        self.deletePost = function(post) {
-            PostService
-                .delete(post)
+        self.deleteTodo = function(todo) {
+            $http
+                .delete(url + todo.id)
                 .then(function(response) {
-                    self.refreshPosts();
-                }, function(response) {
-                    console.log(response);
+                    console.log('response after delete call ', response);
+                    loadTodos();
                 });
-        }
+        };
+
     })
-    .service('PostService', function($http) {
-        var self = this;
-        var baseUrl = 'http://localhost:3000';
-        var url = baseUrl + '/post';
+    .service('TodoService', function($http) {
+        var url = 'http://localhost:3000/todo/';
 
-        self.getAll = function() {
+        this.getAll = function() {
             return $http.get(url);
         }
 
-        self.add = function(post) {
-            return $http.post(url, post);
+        this.add = function (todo) {
+            return $http.post(url, todo);
         }
-
-        self.update = function(post) {
-            return $http.put(url + '/' + post.id, post);
-        }
-
-        self.delete = function(post) {
-            return $http.delete(url + '/' + post.id);
-        }
-    })
+    });

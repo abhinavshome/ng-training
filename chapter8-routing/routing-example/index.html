@@ -1,0 +1,40 @@
+<html ng-app="todoApp">
+
+<head>
+    <title>Angular Training</title>
+    <script src="angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+    <script src="app.js"></script>
+    <style>
+    th {
+        background-color: navy;
+        color: white;
+        padding: 5px;
+    }
+    
+    td {
+        background-color: lightgray;
+        padding: 5px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to todo routing app</h1>
+
+    <div>
+        <a href="#/">All todos</a> |
+        <a href="#/todo/summary">Summary</a> | 
+        <a href="#/todo/add">Add a todo</a> | 
+        <a href="#/my-ip">My IP</a>
+    </div>
+    <br>
+
+    <ng-view></ng-view>
+
+    </div>
+
+</body>
+
+</html>

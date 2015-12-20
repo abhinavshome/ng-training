@@ -1,0 +1,16 @@
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Label</th>
+            <th>Priority</th>
+            <th>Done</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="todo in ctrl.todos">
+            <td> {{todo.id}} </td>
+            <td> <a href="#/todo/detail/{{todo.id}}">{{todo.label}}</a> </td>
+            <td> {{todo.priority}} </td>
+            <td> {{ todo.done ? '&#10003' : '&#10005' }} </td>
+            <td> <a href="#/todo/edit/{{todo.id}}">Edit</a></td>
+        </tr>
+    </table>

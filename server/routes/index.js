@@ -4,17 +4,17 @@ var router = express.Router();
 var auth = require('./auth.js');
 var products = require('./products.js');
 var user = require('./users.js');
-var posts = require('./posts.js');
+var todos = require('./todos.js');
 
 /*
  * Routes that can be accessed by any one
  */
 router.post('/login', auth.login);
-router.get('/post', posts.getAll);
-router.get('/post/:id', posts.getOne);
-router.post('/post/', posts.create);
-router.put('/post/:id', posts.update);
-router.delete('/post/:id', posts.delete);
+router.get('/todo', todos.getAll);
+router.get('/todo/:id', todos.getOne);
+router.post('/todo/', todos.create);
+router.put('/todo/:id', todos.update);
+router.delete('/todo/:id', todos.delete);
 
 /*
  * Routes that can be accessed only by autheticated users

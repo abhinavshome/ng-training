@@ -1,6 +1,7 @@
 angular
     .module('filtersApp', [])
     .controller('FilterCtrl', function(filterFilter) {
+        
         this.notes = [{
             label: 'FC Todo',
             type: 'chore',
