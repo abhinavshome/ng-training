@@ -20,10 +20,10 @@ router.delete('/todo/:id', todos.delete);
  * Routes that can be accessed only by autheticated users
  */
 router.get('/api/v1/products', products.getAll);
-router.get('/api/v1/product/:id', products.getOne);
-router.post('/api/v1/product/', products.create);
-router.put('/api/v1/product/:id', products.update);
-router.delete('/api/v1/product/:id', products.delete);
+router.get('/api/v1/products/:id', products.getOne);
+router.post('/api/v1/products/', products.create);
+router.put('/api/v1/products/:id', products.update);
+router.delete('/api/v1/products/:id', products.delete);
 
 /*
  * Routes that can be accessed only by authenticated & authorized users

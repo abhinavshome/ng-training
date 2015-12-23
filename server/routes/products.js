@@ -34,7 +34,7 @@ var productsApi = {
     }
 };
 
-var lastIdUsed = 4;
+var lastIdUsed = 0;
 
 function findById(id) {
     for (var i = 0; i < products.length; i++) {
