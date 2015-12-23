@@ -34,6 +34,11 @@ angular
             templateUrl: 'priority-widget-tpl.html',
             link: function(scope, element, attributes) {
                 console.log(scope);
+                scope.widthPerPoint = 10;
+                console.log(' => ', scope.widthPerPoint);
+                scope.changeWidth = function () {
+                    scope.widthPerPoint = 10;
+                }
                 scope.getColorCode =  function(point) {
                     if(scope.colorFunction) {
                         return scope.colorFunction({priority: point})

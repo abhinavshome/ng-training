@@ -3,6 +3,7 @@ angular
     .controller('ProductCtrl', function($http, AuthService, $location) {
         var ctrl = this,
             token = AuthService.getToken();
+        console.log('here');
         $http
             .get('http://localhost:3000/api/v1/products', {
                 headers: {

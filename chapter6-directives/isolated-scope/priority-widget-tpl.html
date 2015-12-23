@@ -1,7 +1,6 @@
-<div style="width:{{item.priority*widthPerPoint}}px;background-color:{{getColorCode(item.priority)}}">
+<div style="width:{{item.priority*(widthPerPoint || 10)}}px;background-color:{{getColorCode(item.priority)}}">
 	{{item.priority}}
-<!-- 
-<button ng-click="ctrl.todos[0].label='hacked'">Side Effect</button>
- -->
+<button ng-click="changeWidth()">Change</button>
+
  </div>
 

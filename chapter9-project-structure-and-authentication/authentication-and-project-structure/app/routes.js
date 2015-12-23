@@ -36,6 +36,8 @@ angular
             })
             .when('/products', {
                 controller: 'ProductCtrl as ctrl',
-                templateUrl: 'app/templates/products.html'
+                templateUrl: 'app/templates/products.html',
+                loginRequired: true
+
             })
     });
