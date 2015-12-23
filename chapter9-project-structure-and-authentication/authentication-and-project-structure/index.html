@@ -1,0 +1,35 @@
+<html ng-app="todoApp">
+
+<head>
+    <title>Angular Training</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/controllers/todoListCtrl.js"></script>
+    <script src="app/controllers/todoSummaryCtrl.js"></script>
+    <script src="app/services/todoService.js"></script>
+    <script src="app/controllers/todoAddCtrl.js"></script>
+    <script src="app/controllers/todoEditCtrl.js"></script>
+    <script src="app/controllers/ipCtrl.js"></script>
+    <script src="app/controllers/loginCtrl.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/controllers/productsCtrl.js"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <a href="#/">Todos</a> |
+        <a href="#/summary">Summary</a> |
+        <a href="#/todo/add">Add todo</a> |
+        <a href="#/my-ip">My IP</a> | 
+        <a href="#/login">Login</a> |
+        <a href="#/products">Products</a>
+    </div>
+    <ng-view></ng-view>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<h3>Todos</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Label</th>
+        <th>Priority</th>
+        <th>Done</th>
+        <th>Action</th>
+    </tr>
+    <tr ng-repeat="todo in ctrl.todos">
+        <td> {{todo.id}} </td>
+        <td> {{todo.label}} </td>
+        <td> {{todo.priority}} </td>
+        <td> {{ todo.done ? '&#10003' : '&#10005' }} </td>
+        <td> <button ng-click="ctrl.editTodo(todo)">Edit</button></td>
+    </tr>
+</table>
+
