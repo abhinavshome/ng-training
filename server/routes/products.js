@@ -34,7 +34,7 @@ var productsApi = {
     }
 };
 
-var lastIdUsed = 0;
+var lastIdUsed = 2;
 
 function findById(id) {
     for (var i = 0; i < products.length; i++) {
@@ -52,6 +52,6 @@ function findIndexById(id) {
     }
 }
 
-var products = [];
+var products = [{id:1, name: 'Laptop'}, {id:2, name: 'Bag'}];
 
 module.exports = productsApi;

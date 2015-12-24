@@ -1,8 +1,8 @@
 angular
     .module('simpleApp', [])
-    .controller('SimpleCtrl', ['$location', function($location) {
+    .controller('SimpleCtrl', function($location) {
         var self = this;
         self.navigate = function() {
             $location.path('/some/where/else');
         };
-    }]);
+    });

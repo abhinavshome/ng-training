@@ -5,9 +5,11 @@ angular
         self.items = [];
         self.errorMessage = '';
         $http.get('/api/note').then(function(response) {
-            self.items = response.data.map(function (n) {
+
+            self.items = response.data.map(function(n) {
                 return n.label;
             });
+
         }, function(errResponse) {
             self.errorMessage = errResponse.data.msg;
         });

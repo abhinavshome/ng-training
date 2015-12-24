@@ -18,5 +18,4 @@ setTimeout(sayBye, 2000);
 
 document.getElementById("btn").addEventListener('click', sayCheese);
 
-console.log('How you doing?');
-
+runAProgramFor5s();

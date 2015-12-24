@@ -49,8 +49,7 @@ describe('Stock Widget Directive Behavior', function() {
 
             expect(compiledElementScope.item)
                 .toEqual(scope.todo);
-            expect(compiledElementScope.colorFunction(
-                compiledElementScope.item)).toEqual('blue');
+            expect(compiledElementScope.colorFunction(compiledElementScope.item)).toEqual('blue');
 
 
             // Step 7
