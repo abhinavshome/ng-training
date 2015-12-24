@@ -52,6 +52,16 @@ function findIndexById(id) {
     }
 }
 
-var books = [{id:1, title: 'The Alchemist'}, {id:2, name: 'Monk who sold his ferrari'}];
+var books = [{
+    id: 1,
+    title: 'The Alchemist',
+    desc: 'Very nice book',
+    price: 22
+}, {
+    id: 2,
+    name: 'Monk who sold his ferrari',
+    desc: 'Best book',
+    price: 24
+}];
 
 module.exports = booksApi;
