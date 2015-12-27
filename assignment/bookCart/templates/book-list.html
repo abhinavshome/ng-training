@@ -1,0 +1,12 @@
+<table>
+	<tr ng-repeat="book in ctrl.books">
+		<td style="width:80%">
+			<div><b>{{book.title | titlecase}}</b></div>
+			<div><i>{{book.desc}}</i></div>
+			<div>{{book.price}}</div>
+		</td>
+		<td>
+			<button ng-click="ctrl.addToCart(book)">Add to cart</button>
+		</td>
+	</tr>
+</table>

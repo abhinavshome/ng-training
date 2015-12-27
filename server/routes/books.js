@@ -59,7 +59,7 @@ var books = [{
     price: 22
 }, {
     id: 2,
-    name: 'Monk who sold his ferrari',
+    title: 'Monk who sold his ferrari',
     desc: 'Best book',
     price: 24
 }];

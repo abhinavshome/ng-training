@@ -13,5 +13,5 @@ angular
 			mar: {id: 2, title: "This is my 2nd post"},
 			june: {id: 3, title: "This is my 3rd post"},
 			july: {id: 4, title: "This is my 4th post"}
-		}
+		};
 	});

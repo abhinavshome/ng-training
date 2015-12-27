@@ -1,0 +1,6 @@
+<div ng-show="order.items.length">
+    {{order.items[0].title}} and {{order.items.length - 1}} more on {{ order.createdAt | date }} <a ng-click="showDetails()">details {{ detailShown ? '-' : '+' }}</a>
+    <ul ng-show="detailShown">
+        <li ng-repeat="item in order.items">{{item.title}} ({{item.quantity}})</li>
+    </ul>
+</div>

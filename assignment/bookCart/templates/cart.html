@@ -1,0 +1,37 @@
+<h3>Cart</h3>
+
+<table ng-show="ctrl.cart.items.length">
+	<tr>
+		<th>Item ID</th>
+		<th>Item</th>
+		<th>Quantity</th>
+		<th>Price</th>
+	</tr>
+	<tr ng-repeat="item in ctrl.cart.items">
+		<td>{{item.bookId}}</td>
+		<td>{{item.title}}</td>
+		<td>
+		{{item.quantity}}
+			<button ng-click="ctrl.increaseQuantity(item)">+</button>
+			<button ng-click="ctrl.decreaseQuantity(item)">-</button>
+		</td>
+		<td>{{item.price}}</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<b>Total</b>
+		</td>
+		<td colspan="1">
+			{{ctrl.cart.totalQuantity}}
+		</td>
+		<td colspan="1">
+			{{ctrl.cart.totalPrice}}
+		</td>
+	</tr>
+</table>
+<div ng-hide="ctrl.cart.items.length">
+	Cart is empty!
+</div>
+
+<button ng-show="ctrl.cart.items.length" ng-click="ctrl.placeOrder()">Place Order</button>
+
