@@ -19,6 +19,10 @@ angular
                 controller: 'OrderCtrl as ctrl',
                 templateUrl: 'templates/orders.html'
             })
+            .when('/book/add', {
+                controller: 'BookAddCtrl as ctrl',
+                templateUrl: 'templates/book-add.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });

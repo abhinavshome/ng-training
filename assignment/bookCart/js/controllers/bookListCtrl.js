@@ -1,6 +1,6 @@
 angular
     .module('booksCart')
-    .controller('BookListCtrl', function(BookService, CartService) {
+    .controller('BookListCtrl', function(BookService, CartService, AlertService) {
         var ctrl = this;
 
         function loadBooks() {
@@ -14,6 +14,7 @@ angular
         loadBooks();
 
         ctrl.addToCart = function(book) {
+            AlertService.success(book.title + ' added to cart');
             CartService.add(book);
         };
     });

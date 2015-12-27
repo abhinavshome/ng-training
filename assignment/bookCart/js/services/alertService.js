@@ -15,7 +15,7 @@ angular
             alert.message = message;
         };
 
-        this.eror = function(message) {
+        this.error = function(message) {
             alert.type = 'error';
             alert.message = message;
         };

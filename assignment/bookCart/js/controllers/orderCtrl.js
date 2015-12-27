@@ -10,7 +10,7 @@ angular
             }, function(response) {
                 if (response.status == 401) {
                     $location.path('/login');
-                    AlertService.success('You need to login to see your orders');
+                    AlertService.error('You need to login to see your orders');
                 }
             });
 

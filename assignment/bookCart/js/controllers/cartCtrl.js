@@ -1,12 +1,13 @@
 angular
     .module('booksCart')
-    .controller('CartCtrl', function(CartService, OrderService, $location) {
+    .controller('CartCtrl', function(CartService, OrderService, $location, AlertService) {
         this.cart = CartService.getCart();
 
         this.increaseQuantity = function(item) {
             item.quantity++;
             this.cart.totalQuantity++;
             this.cart.totalPrice += item.price;
+            AlertService.success('increased')
         };
 
         this.decreaseQuantity = function(item) {
@@ -21,14 +22,14 @@ angular
             OrderService
                 .createOrder(this.cart)
                 .then(function(response) {
-                        console.log('Order placed successfully');
+                        AlertService.success('Order placed successfully');
                     },
                     function(response) {
                         if (response.status == 401) {
-                            console.log('Unauthorised to fetch orders, sending to login');
-                            $location.path('/login');
+                            console.log(' => ');
+                            //$location.path('/login');
+                            AlertService.error('Please login first');
                         }
-                    }
-                );
-        }
+                    });
+        };
     });

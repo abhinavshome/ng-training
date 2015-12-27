@@ -1,0 +1,13 @@
+<form ng-submit="ctrl.addBook()">
+        <label>Title</label><br>
+        <input type="text" ng-model="ctrl.newBook.title">
+        <br>
+        <label>Description</label><br>
+		<textarea ng-model="ctrl.newBook.desc">
+		</textarea>
+		<br>
+        <label>Price</label><br>
+        <input type="text" ng-model="ctrl.newBook.price">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
