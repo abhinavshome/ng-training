@@ -9,6 +9,6 @@ angular
 				.add(ctrl.newBook)
 				.then(function () {
 					AlertService.success(ctrl.newBook.title + ' created successfully');
-				})
-		}
+				});
+		};
 	})

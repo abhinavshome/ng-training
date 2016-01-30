@@ -1,0 +1,25 @@
+<html ng-app="demoApp">
+
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+    
+	<!-- Javascript library files -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- App Javascript files -->
+    <script src="js/app.js"></script>
+    <script src="js/states.js"></script>
+    <script src="js/controllers/cricketCtrl.js"></script>
+    <script src="js/services/cricketService.js"></script>
+</head>
+
+<body>
+
+	<a ui-sref="news">News</a> | 
+	<a ui-sref="cricket">Cricket</a><br>
+	<div ui-view></div>
+	
+</body>
+</html>

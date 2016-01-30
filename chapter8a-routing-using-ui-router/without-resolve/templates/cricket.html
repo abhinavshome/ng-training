@@ -1,0 +1,26 @@
+<h1>Cricket News</h1> Ind vs SA vs Sri Lanka tri sries stats
+<h3>Players</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Centuries</th>
+    </tr>
+    <tr ng-repeat="player in players">
+        <td>{{player.name}}</td>
+        <td>{{player.centuries}}</td>
+    </tr>
+</table>
+
+<h3>Teams</h3>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Won</th>
+        <th>Lost</th>
+    </tr>
+    <tr ng-repeat="team in teams">
+        <td>{{team.name}}</td>
+        <td>{{team.won}}</td>
+        <td>{{team.lost}}</td>
+    </tr>
+</table>

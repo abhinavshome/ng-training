@@ -6,6 +6,7 @@ angular
             message: ''
         };
 
+        //this comment has been changed 
         this.getAlert = function () {
         	return alert;
         }

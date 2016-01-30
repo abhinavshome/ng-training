@@ -1,0 +1,27 @@
+<html ng-app="demoApp">
+
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+    
+	<!-- Javascript library files -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- App Javascript files -->
+    <script src="js/app.js"></script>
+    <script src="js/states.js"></script>
+</head>
+
+<body>
+
+	<div class="menu">
+		<a ui-sref="breakfast">Breakfast</a> | 
+		<a ui-sref="lunch">Lunch</a> | 
+		<a ui-sref="dinner">Dinner</a>
+	</div>
+
+	<div ui-view></div>
+	
+</body>
+</html>

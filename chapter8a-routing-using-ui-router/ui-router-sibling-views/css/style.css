@@ -1,0 +1,29 @@
+a{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.body {
+	background-color: lightgray;
+	padding: 50px;
+	float: left;
+	width: 50%;
+	height: 200px;
+}
+.header {
+	padding: 10px;
+	background-color: pink;
+}
+.footer {
+	padding: 10px;
+	background-color: aqua;	
+}
+.nav {
+	padding: 50px;
+	float: left;
+	width: 20%;
+	background-color: yellow;
+	height: 200px;
+}
+.clear {
+	clear: both;
+}

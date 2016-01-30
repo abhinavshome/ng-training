@@ -1,0 +1,26 @@
+<html ng-app="demoApp">
+
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Javascript library files -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-translate.min.js"></script>
+    <!-- App Javascript files -->
+    <script src="js/app.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/controllers/languageCtrl.js"></script>
+</head>
+
+<body>
+    <div ng-controller="languageCtrl">
+        <button ng-click="changeLanguage('de')" translate="BUTTON_TEXT_DE"></button>
+        <button ng-click="changeLanguage('en')" translate="BUTTON_TEXT_EN"></button>
+    </div>
+    <div ng-controller="mainCtrl">
+        <h2>{{ 'HEADLINE' | translate }}</h2>
+        <p>{{ 'INTRO_TEXT' | translate }}</p>
+    </div>
+</body>
+
+</html>
