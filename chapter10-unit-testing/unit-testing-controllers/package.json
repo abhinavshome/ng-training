@@ -10,8 +10,10 @@
     "karma": "^0.13.14"
   },
   "devDependencies": {
-    "karma": "^0.13.14",
+    "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.1",
+    "karma-coverage": "^0.5.3",
+    "karma-html-reporter": "^0.2.7",
     "karma-jasmine": "^0.3.6",
     "karma-tape-reporter": "^1.0.3"
   },
