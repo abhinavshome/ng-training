@@ -1,33 +1,31 @@
 // chapter3/why-services/app.js
 angular.module('todoApp', [])
-  .controller('TodoCtrl', function () {
+  .controller('todoCtrl', function () {
     
   })
-  .controller('BasicTodoCtrl', function() {
-    var self = this;
-    self.todos = [
+  .controller('basicTodoCtrl', function($scope) {
+    $scope.todos = [
       {id: 1, label: 'Item 0', deadline: 'Today'},
       {id: 2, label: 'Item 1', deadline: 'Tomorrow'}
     ];
-    self.add = function() {
-      self.todos.push({
-        id: self.todos.length + 1,
-        label: self.todo.label,
+    $scope.add = function() {
+      $scope.todos.push({
+        id: $scope.todos.length + 1,
+        label: $scope.todo.label,
         deadline: 'Today'
       });
     };
   })
-  .controller('AdvancedTodoCtrl', function() {
-    var self = this;
-    self.todos = [
+  .controller('advancedTodoCtrl', function($scope) {
+    $scope.todos = [
       {id: 1, label: 'Item 0', deadline: 'Today'},
       {id: 2, label: 'Item 1', deadline: 'Tomorrow'}
     ];
-    self.add = function() {
-      self.todos.push({
-        id: self.todos.length + 1,
-        label: self.todo.label,
-        deadline: self.todo.deadline
+    $scope.add = function() {
+      $scope.todos.push({
+        id: $scope.todos.length + 1,
+        label: $scope.todo.label,
+        deadline: $scope.todo.deadline
       });
     };
   })

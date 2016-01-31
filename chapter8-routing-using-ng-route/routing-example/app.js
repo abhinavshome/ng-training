@@ -1,7 +1,7 @@
 angular
     .module('todoApp', ['ngRoute'])
     .value('url', 'http://localhost:3000/todo/')
-    .controller('TodoCtrl', function($http, url) {
+    .controller('todoCtrl', function($http, url) {
         var ctrl = this;
         $http
             .get(url)
@@ -9,7 +9,7 @@ angular
                 ctrl.todos = response.data;
             });
     })
-    .controller('TodoSummaryCtrl', function($http, url) {
+    .controller('todoSummaryCtrl', function($http, url) {
         var ctrl = this;
         $http
             .get(url)
@@ -17,7 +17,7 @@ angular
                 ctrl.todos = response.data;
             });
     })
-    .controller('TodoDetailCtrl', function($http, $routeParams, url) {
+    .controller('todoDetailCtrl', function($http, $routeParams, url) {
         var ctrl = this;
         $http
             .get(url + $routeParams.id)
@@ -25,7 +25,7 @@ angular
                 ctrl.todo = response.data;
             });
     })
-    .controller('TodoEditCtrl', function($http, $routeParams, url, $location) {
+    .controller('todoEditCtrl', function($http, $routeParams, url, $location) {
         var ctrl = this;
         $http
             .get(url + $routeParams.id)
@@ -40,11 +40,11 @@ angular
                 });
         }
     })
-    .controller('TodoAddCtrl', function($http, url, $location) {
+    .controller('todoAddCtrl', function($http, url, $location) {
         var ctrl = this;
         this.submit = function() {
             $http
-                .post(url, ctrl.newTodo)
+                .post(url, ctrl.newtodo)
                 .then(function(response) {
                     ctrl.todos = response.data;
                     $location.path('/');
@@ -65,23 +65,23 @@ angular
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: "TodoCtrl as ctrl",
+                controller: "todoCtrl as ctrl",
                 templateUrl: "todo-list.html"
             })
             .when('/todo/summary', {
-                controller: "TodoSummaryCtrl as ctrl",
+                controller: "todoSummaryCtrl as ctrl",
                 templateUrl: 'todo-summary.html'
             })
             .when('/todo/detail/:id', {
-                controller: "TodoDetailCtrl as ctrl",
+                controller: "todoDetailCtrl as ctrl",
                 templateUrl: "todo-detail.html"
             })
             .when('/todo/add', {
-                controller: "TodoAddCtrl as ctrl",
+                controller: "todoAddCtrl as ctrl",
                 templateUrl: "todo-add.html"
             })
             .when('/todo/edit/:id', {
-                controller: "TodoEditCtrl as ctrl",
+                controller: "todoEditCtrl as ctrl",
                 templateUrl: "todo-edit.html"
             })
             .when('/my-ip', {

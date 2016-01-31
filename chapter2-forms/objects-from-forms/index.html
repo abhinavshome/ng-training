@@ -14,13 +14,13 @@
     </style>
 </head>
 
-<body ng-controller="UserCtrl as ctrl">
-    <form ng-submit="ctrl.submit()">
+<body ng-controller="userCtrl">
+    <form ng-submit="submit()">
         <label>User</label>
-        <input type="text" ng-model="ctrl.user.username">
+        <input type="text" ng-model="user.username">
         <br>
         <label>Password</label>
-        <input type="password" ng-model="ctrl.user.password">
+        <input type="password" ng-model="user.password">
         <br>
         <input type="submit" value="Submit">
     </form>

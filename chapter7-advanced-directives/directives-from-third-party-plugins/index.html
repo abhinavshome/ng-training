@@ -20,24 +20,24 @@
     <script src="app.js"></script>
 </head>
 
-<body ng-controller="UserCtrl as ctrl">
-   {{ctrl.user}}
-    <form ng-submit="ctrl.submit()">
+<body ng-controller="userCtrl">
+   {{user}}
+    <form ng-submit="submit()">
         <label>Name</label>
-        <input type="text" ng-model="ctrl.user.name">
+        <input type="text" ng-model="user.name">
         <br>
         <label>Weight</label>
-        <input type="text" ng-model="ctrl.user.weight"> kg
+        <input type="text" ng-model="user.weight"> kg
         <br>
         <label>Height</label>
-        <div slider ng-model="ctrl.user.height" min="100" max="200"></div>
-        <div>{{ctrl.user.height}}</div>
+        <div slider ng-model="user.height" min="100" max="200"></div>
+        <div>{{user.height}}</div>
         <label>BP</label>
-        <div slider ng-model="ctrl.user.bp" min="70" max="190"></div>
-        <div>{{ctrl.user.bp}}</div>
+        <div slider ng-model="user.bp" min="70" max="190"></div>
+        <div>{{user.bp}}</div>
         <br>
         <label for="">Diseases</label>
-        <input tags ng-model="ctrl.user.diseases"/>
+        <input tags ng-model="user.diseases"/>
         
         <input type="submit" value="Submit">
     </form>

@@ -20,9 +20,9 @@
     </style>
 </head>
 
-<body ng-controller="TasksCtrl as ctrl">
+<body ng-controller="tasksCtrl">
     <ul>
-        <li ng-repeat="task in ctrl.tasks" ng-class="ctrl.getTaskClass(task)">
+        <li ng-repeat="task in tasks" ng-class="getTaskClass(task)">
             {{task.id + '. ' + task.label}} <span ng-show="task.assignee"> - </span> {{task.assignee}}
         </li>
     </ul>

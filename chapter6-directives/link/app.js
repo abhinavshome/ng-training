@@ -1,7 +1,7 @@
 angular
     .module('todoApp', [])
-    .controller('TodoCtrl', function() {
-        this.todos = [{
+    .controller('todoCtrl', function($scope) {
+        $scope.todos = [{
             id: 1,
             label: '1st task',
             priority: 3,
@@ -20,7 +20,7 @@ angular
             label: '4th task',
             priority: 5,
             assignee: 'Mohan'
-        }, ];
+        }];
     })
     .directive('priorityWidget', function() {
         return {

@@ -13,9 +13,9 @@
     </style>
 </head>
 
-<body ng-controller="TodoCtrl as ctrl">
+<body ng-controller="todoCtrl">
     <table>
-        <tr ng-repeat="todo in ctrl.todos">
+        <tr ng-repeat="todo in todos">
             <td> {{todo.id}} </td>
             <td> {{todo.label}} </td>
             <td> {{todo.assignee}} </td>

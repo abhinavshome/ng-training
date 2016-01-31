@@ -1,42 +1,41 @@
 angular
     .module('todoApp', [])
-    .controller('TodoCtrl', function($http, TodoService) {
-        var self = this;
+    .controller('todoCtrl', function($scope, todoService) {
 
         function loadTodos() {
-            TodoService
+            todoService
                 .getAll()
                 .then(function(response) {
-                    self.todos = response.data;
+                    $scope.todos = response.data;
                 });
         }
 
         loadTodos();
 
-        self.addTodo = function() {
-            TodoService
-                .add(self.newTodo)
+        $scope.addTodo = function() {
+            todoService
+                .add($scope.newTodo)
                 .then(function(response) {
                     loadTodos();
                 });
         };
 
-        self.editTodo = function(todo) {
-            self.todoToEdit = angular.copy(todo);
+        $scope.editTodo = function(todo) {
+            $scope.todoToEdit = angular.copy(todo);
         };
 
-        self.updateTodo = function() {
-            $http
-                .put(url + self.todoToEdit.id, self.todoToEdit)
+        $scope.updateTodo = function() {
+            todoService
+                .update($scope.todoToEdit)
                 .then(function(response) {
                     console.log('response after update call ', response);
                     loadTodos();
                 });
         };
 
-        self.deleteTodo = function(todo) {
-            $http
-                .delete(url + todo.id)
+        $scope.deleteTodo = function(todo) {
+            todoService
+                .delete(todo)
                 .then(function(response) {
                     console.log('response after delete call ', response);
                     loadTodos();
@@ -44,14 +43,22 @@ angular
         };
 
     })
-    .service('TodoService', function($http) {
+    .service('todoService', function($http) {
         var url = 'http://localhost:3000/todo/';
 
         this.getAll = function() {
             return $http.get(url);
-        }
+        };
 
-        this.add = function (todo) {
+        this.add = function(todo) {
             return $http.post(url, todo);
-        }
+        };
+
+        this.update = function(todo) {
+            return $http.put(url + todo.id, todo);
+        };
+
+        this.delete = function (todo) {
+            return $http.delete(url + todo.id);
+        };
     });

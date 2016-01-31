@@ -1,7 +1,7 @@
 angular
     .module('todoApp', [])
-    .controller('TodoCtrl', function() {
-        this.todos = [{
+    .controller('todoCtrl', function($scope) {
+        $scope.todos = [{
             id: 1,
             label: '1st task',
             priority: 3,
@@ -22,7 +22,7 @@ angular
             assignee: 'Mohan'
         }, ];
 
-        this.colorChooser = function(priority) {
+        $scope.colorChooser = function(priority) {
             if (priority < 3) return 'lightgreen';
             else if (priority < 5) return 'green';
             else return 'darkgreen';

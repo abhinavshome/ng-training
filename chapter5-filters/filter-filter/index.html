@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <div ng-controller="FilterCtrl as ctrl">
+    <div ng-controller="filterCtrl">
         <h2>String Filter</h2>
         <div>
-            <input type="text" ng-model="ctrl.stringFilter">
+            <input type="text" ng-model="stringFilter">
         </div>
         <table>
-            <tr ng-repeat="note in ctrl.notes | filter:ctrl.stringFilter">
+            <tr ng-repeat="note in notes | filter:stringFilter">
                 <td>{{note.label}}</td>
                 <td>{{note.type}}</td>
                 <td>{{note.done}}</td>
@@ -28,12 +28,12 @@
         <h2>Object Filter</h2>
         <div>
             Label:
-            <input type="text" ng-model="ctrl.objectFilter.label">
+            <input type="text" ng-model="objectFilter.label">
             <br> Done:
-            <input type="checkbox" ng-model="ctrl.objectFilter.done">
+            <input type="checkbox" ng-model="objectFilter.done">
         </div>
         <table>
-            <tr ng-repeat="note in ctrl.notes | filter:ctrl.objectFilter">
+            <tr ng-repeat="note in notes | filter:objectFilter">
                 <td>{{note.label}}</td>
                 <td>{{note.type}}</td>
                 <td>{{note.done}}</td>
@@ -41,10 +41,10 @@
         </table>
         <h2>Function Filter</h2>
         <div>
-            <select ng-model="ctrl.functionFilter" ng-options="f.toString() for f in ctrl.availableFunctionFilters"></select>
+            <select ng-model="functionFilter" ng-options="f.toString() for f in availableFunctionFilters"></select>
         </div>
         <table>
-            <tr ng-repeat="note in ctrl.notes | filter:ctrl.functionFilter">
+            <tr ng-repeat="note in notes | filter:functionFilter">
                 <td>{{note.label}}</td>
                 <td>{{note.type}}</td>
                 <td>{{note.done}}</td>
@@ -52,14 +52,14 @@
         </table>
         <h2>Filtered from controller</h2>
         <table>
-            <tr ng-repeat="note in ctrl.filteredNotes">
+            <tr ng-repeat="note in filteredNotes">
                 <td>{{note.label}}</td>
                 <td>{{note.type}}</td>
                 <td>{{note.done}}</td>
             </tr>
         </table>
         <h2>Add to table</h2>
-        <button ng-click="ctrl.addRowToTable()">Add</button>
+        <button ng-click="addRowToTable()">Add</button>
     </div>
 </body>
 

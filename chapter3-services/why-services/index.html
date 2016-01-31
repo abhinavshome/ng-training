@@ -7,28 +7,28 @@
     <script src="app.js"></script>
 </head>
 
-<body ng-controller="TodoCtrl">
+<body ng-controller="todoCtrl">
 
 	<button ng-click="showAdvanced=!showAdvanced">Show/Hide Advanced</button>
 	<br><br>
 	
-	<div ng-controller="BasicTodoCtrl as ctrl">
-		<form ng-submit="ctrl.add()">
-			<input type="text" ng-model="ctrl.todo.label">
+	<div ng-controller="basicTodoCtrl">
+		<form ng-submit="add()">
+			<input type="text" ng-model="todo.label">
 			<input type="submit" value="Add">
 		</form>
 		<br>
 		<ul>
-			<li ng-repeat="todo in ctrl.todos">
+			<li ng-repeat="todo in todos">
 				#{{todo.id}} | {{todo.label}} || {{todo.deadline}}
 			</li>
 		</ul>
 	</div>
 
-	<div ng-controller="AdvancedTodoCtrl as ctrl" ng-if="showAdvanced">
-		<form ng-submit="ctrl.add()">
-			<input type="text" ng-model="ctrl.todo.label">
-			<select ng-model="ctrl.todo.deadline">
+	<div ng-controller="advancedTodoCtrl" ng-if="showAdvanced">
+		<form ng-submit="add()">
+			<input type="text" ng-model="todo.label">
+			<select ng-model="todo.deadline">
 				<option value="Today">Today</option>
 				<option value="Tomorrow">Tomorrow</option>
 			</select>
@@ -36,7 +36,7 @@
 		</form>
 		<br>
 		<ul>
-			<li ng-repeat="todo in ctrl.todos">
+			<li ng-repeat="todo in todos">
 				#{{todo.id}} | {{todo.label}} || {{todo.deadline}}
 			</li>
 		</ul>

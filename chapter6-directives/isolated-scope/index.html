@@ -13,17 +13,15 @@
     </style>
 </head>
 
-<body ng-controller="TodoCtrl as ctrl">
+<body ng-controller="todoCtrl">
     <table>
-        <tr ng-repeat="todo in ctrl.todos">
+        <tr ng-repeat="todo in todos">
             <td> {{todo.id}} </td>
             <td> {{todo.label}} </td>
             <td> {{todo.assignee}} </td>
             <td>
-                <priority-widget item="todo" width-per-point="30" color-function="ctrl.colorChooser(priority)"></priority-widget>
+                <priority-widget item="todo" width-per-point="30" color-function="colorChooser(priority)"></priority-widget>
             </td>
-                        <!-- <td>{{getColorCode(todo.priority)}}</td> -->
-
         </tr>
     </table>
 </body>

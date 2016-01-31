@@ -1,6 +1,6 @@
 angular
     .module('routingApp', ['ngRoute'])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(function($routeProvider) {
         $routeProvider.when('/', {
                 template: '<h5>This is the default route</h5>'
             })
@@ -10,4 +10,4 @@ angular
             .otherwise({
                 redirectTo: '/'
             });
-    }]);
+    });

@@ -14,29 +14,25 @@
     </style>
 </head>
 
-<body ng-controller="UserCtrl as ctrl">
-
-    
-
-
-    <form name="userForm" ng-submit="ctrl.submit()">
+<body ng-controller="userCtrl">
+    <form name="userForm" ng-submit="submit()">
         <label>User</label>
-        <input type="text" ng-model="ctrl.user.username" required ng-minlength="4">
+        <input type="text" ng-model="user.username" required ng-minlength="4">
         <br>
         <label>Password</label>
-        <input type="password" ng-model="ctrl.user.password" required>
+        <input type="password" ng-model="user.password" required>
         <br>
         <input type="submit" value="Submit" ng-disabled="userForm.$invalid">
         <hr>
         <pre>
-		State of the form: 
-		
-		$invalid: {{userForm.$invalid}} 
-		$valid: {{userForm.$valid}} 
-		$dirty: {{userForm.$dirty}} 
-		$pristine: {{userForm.$pristine}} 
-		$error: {{userForm.$error}}
-		</pre>
+        State of the form: 
+        
+        $invalid: {{userForm.$invalid}} 
+        $valid: {{userForm.$valid}} 
+        $dirty: {{userForm.$dirty}} 
+        $pristine: {{userForm.$pristine}} 
+        $error: {{userForm.$error}}
+        </pre>
     </form>
 </body>
 

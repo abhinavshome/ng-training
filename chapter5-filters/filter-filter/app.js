@@ -1,8 +1,8 @@
 angular
     .module('filtersApp', [])
-    .controller('FilterCtrl', function(filterFilter) {
+    .controller('filterCtrl', function($scope, filterFilter) {
         
-        this.notes = [{
+        $scope.notes = [{
             label: 'FC Todo',
             type: 'chore',
             done: false
@@ -40,8 +40,8 @@ angular
             done: false
         }];
 
-        this.stringFilter = '';
-        this.objectFilter = {
+        $scope.stringFilter = '';
+        $scope.objectFilter = {
             done: true,
             label: 'S'
         };
@@ -52,13 +52,13 @@ angular
             return note.type == 'chore';
         }
 
-        this.functionFilter = doneTasks;
-        this.availableFunctionFilters = [doneTasks, chores];
+        $scope.functionFilter = doneTasks;
+        $scope.availableFunctionFilters = [doneTasks, chores];
 
-        this.filteredNotes = filterFilter(this.notes, chores);
-        this.addRowToTable = function() {
-            this.notes.push({
-                label: 'New Todo' + this.notes.length,
+        $scope.filteredNotes = filterFilter($scope.notes, chores);
+        $scope.addRowToTable = function() {
+            $scope.notes.push({
+                label: 'New Todo' + $scope.notes.length,
                 type: 'chore',
                 done: false
             })

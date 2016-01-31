@@ -1,13 +1,13 @@
 angular
     .module('filtersApp', [])
-    .controller('FilterCtrl', ['lowercaseFilter',  function(lowercaseFilter) {
-        this.amount = 1024;
-        this.name = 'Micheal Jackson';
-        this.obj = {
+    .controller('filterCtrl', function($scope, lowercaseFilter) {
+        $scope.amount = 1024;
+        $scope.name = 'Micheal Jackson';
+        $scope.obj = {
             test: 'value',
             num: 123
         };
-        this.startTime = new Date().getTime();
-        this.nameInLC = lowercaseFilter(this.name);
+        $scope.startTime = new Date().getTime();
+        $scope.nameInLC = lowercaseFilter($scope.name);
 
-    }]);
+    });

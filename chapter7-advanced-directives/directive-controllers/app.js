@@ -1,8 +1,5 @@
 angular
     .module('tabApp', [])
-    .controller('TabCtrl', function () {
-        
-    })
     .directive('tabs', [function() {
         return {
             restrict: 'E',

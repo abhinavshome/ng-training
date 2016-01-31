@@ -1,8 +1,7 @@
 angular
     .module('userApp', [])
-    .controller('UserCtrl', [function() {
-        var self = this;
-        self.submit = function() {
-            console.log('User clicked submit with ', self.user);
+    .controller('userCtrl', function($scope) {
+        $scope.submit = function() {
+            console.log('User clicked submit with ', $scope.user);
         };
-    }]);
+    });

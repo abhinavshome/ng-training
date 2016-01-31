@@ -1,6 +1,7 @@
-angular.module('taskApp', [])
-    .controller('TasksCtrl', function() {
-        this.tasks = [{
+angular
+    .module('taskApp', [])
+    .controller('tasksCtrl', function($scope) {
+        $scope.tasks = [{
             id: 1,
             label: '1st task',
             priority: 3,
@@ -21,7 +22,7 @@ angular.module('taskApp', [])
             assignee: 'Mohan'
         }, ];
 
-        this.getTaskClass = function (task) {
+        $scope.getTaskClass = function (task) {
         	return {
         		critical: task.priority > 3,
         		normal: task.priority >=2 && task.priority <= 3,

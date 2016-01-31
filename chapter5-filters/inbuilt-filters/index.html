@@ -8,49 +8,50 @@
 </head>
 
 <body>
-    <div ng-controller="FilterCtrl as ctrl">
-        <ul ng-controller="FilterCtrl as ctrl">
-        {{ctrl.nameInLC}}
+    <div ng-controller="filterCtrl">
+        <ul>
             <li>
-                Amount - {{ctrl.amount}}
+                Amount - {{amount}}
             </li>
             <li>
-                Amount - Default Currency: {{ctrl.amount | currency}}
+                Amount - Default Currency: {{amount | currency}}
             </li>
             <li>
                 <!-- Using the English pound sign -->
-                Amount - INR Currency: {{ctrl.amount | currency:'&#163 '}} </li>
+                Amount - INR Currency: {{amount | currency:'&#163 '}} </li>
             <li>
-                Amount - Number: {{ctrl.amount | number}}
+                Amount - Number: {{amount | number}}
             </li>
             <li>
-                Amount - No. with 4 decimals: {{ctrl.amount | number:4}}
+                Amount - No. with 4 decimals: {{amount | number:4}}
             </li>
             <li>
-                Chained filters: {{ctrl.name | lowercase | limitTo:5 }}
+                Chained filters: {{name | lowercase | limitTo:5 }}
             </li>
             <li>
-                Name - lowercase filter: {{ctrl.name | lowercase}}
+                {{nameInLC}}
             </li>
             <li>
-                Name - uppercase filter: {{ctrl.name | uppercase}}
+                Name - lowercase filter: {{name | lowercase}}
             </li>
             <li>
-                The JSON Filter: <pre>{{ctrl.obj | json}}</pre>
+                Name - uppercase filter: {{name | uppercase}}
             </li>
             <li>
-                Timestamp: {{ctrl.startTime}}
+                The JSON Filter: <pre>{{obj | json}}</pre>
             </li>
             <li>
-                Default Date filter: {{ctrl.startTime | date}}
+                Timestamp: {{startTime}}
             </li>
             <li>
-                Medium Date filter: {{ctrl.startTime | date:'medium'}}
+                Default Date filter: {{startTime | date}}
             </li>
             <li>
-                Custom Date filter: {{ctrl.startTime | date:'M/dd, yyyy'}}
+                Medium Date filter: {{startTime | date:'medium'}}
             </li>
-
+            <li>
+                Custom Date filter: {{startTime | date:'M/dd, yyyy'}}
+            </li>
         </ul>
     </div>
 </body>

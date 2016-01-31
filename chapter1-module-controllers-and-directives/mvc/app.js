@@ -1,5 +1,5 @@
-function PostsCtrl($scope) {
-    $scope.firstPost = "This is my first post";
-}
-
-angular.module('blogApp', []).controller('PostsCtrl', PostsCtrl);
+angular
+    .module('blogApp', [])
+    .controller('postsCtrl', function($scope) {
+        $scope.firstPost = "This is my first post";
+    });

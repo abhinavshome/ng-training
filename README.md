@@ -35,15 +35,22 @@
 	- Simple directive example
 	- _link_ function
 	- Isolated scope
+- Chapter 7 - Advanced directives
 	- _compile_ function
 	- Directive to directive communication through directive controllers
 	- Directives based on third party plugins such as jquery plugins
-- Chapter 7 - Routing using ngRoute
+- Chapter 8 - Routing using ngRoute
 	- Basic routing example
 	- More routing concepts
-- Chapter 8 - Authentication and a good project setup
-	- An app supporting authentication and authorization with good project structure
-- Chapter 9 - Unit testing
+- Chapter 8a - Routing using ui router
+	- ui router basics
+	- sibling views
+	- nested views
+	- resolve
+- Chapter 9 - Miscellaneous topics
+	- Authentication
+	- Internationalization
+- Chapter 10 - Unit testing
 	- Unit testing controllers
 	- Unit testing a simple service
 	- Unit testing controllers which make backend calls
@@ -53,7 +60,7 @@
 	- Using Spies
 	- Unit testing filters
 	- Unit testing directives
-- Chapter 10 - End to end testing using protractor
+- Chapter 11 - End to end testing using protractor
 	- Writing e2e tests using protractor
 	- The page object pattern
 
@@ -80,7 +87,7 @@ This will run a static server on port 5000. Got to http://localhost:5000 to see 
 
 Alternatively, you can also just open the example folder in explorer and double click on index.html. It will open the file in browser and load the angular app.
 
-#### For Chapter 4 and 8
+#### For Chapter 4 and 9
 You need to start the backed server as well. To start the backend server -
 ```
 cd /path/to/ng-training
@@ -91,7 +98,7 @@ node server.js
 
 This will start the server on post 3000. You can change the port in server.js. You can see http://localhost:3000/ to see the backend server running. Now you can run your examples using the same steps described in previous section.
 
-#### Chapter 9
+#### Chapter 10
 This chapter is about unit tests. To run the unit tests you need karma. Install karma using commands
 
 ```
@@ -118,7 +125,7 @@ karma start
 
 This command reads the karma.conf.js file as run the tests from the folders as specified here.
 
-#### Chapter 10
+#### Chapter 11
 Run the backend server and angular frontend server as done for Chapter 4 and 8. To run the protractor tests first install protractor.
 
 ```

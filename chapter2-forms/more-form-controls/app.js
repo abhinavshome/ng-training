@@ -1,8 +1,7 @@
 angular
     .module('userApp', [])
-    .controller('UserCtrl', [function() {
-        var self = this;
-        self.countries = [{
+    .controller('userCtrl', function($scope) {
+        $scope.countries = [{
             label: 'USA',
             id: 1,
             continent: 'America'
@@ -15,7 +14,8 @@ angular
             id: 3,
             continent: 'Asia'
         }];
-        self.submit = function() {
-            console.log('User clicked submit with ', self.user);
+
+        $scope.submit = function() {
+            console.log('User clicked submit with ', $scope.user);
         };
-    }]);
+    });
