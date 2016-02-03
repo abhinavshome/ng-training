@@ -35,13 +35,9 @@ angular
             link: function(scope, element, attributes) {
                 console.log(scope);
                 scope.widthPerPoint = 10;
-                console.log(' => ', scope.widthPerPoint);
-                scope.changeWidth = function () {
-                    scope.widthPerPoint = 10;
-                }
                 scope.getColorCode =  function(point) {
                     if(scope.colorFunction) {
-                        return scope.colorFunction({priority: point})
+                        return attributes.colorFunction({priority: point})
                     }
 
                     if (point < 3) return 'yellow';

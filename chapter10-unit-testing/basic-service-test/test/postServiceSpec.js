@@ -1,14 +1,14 @@
-describe('Service: PostService', function() {
+describe('Service: postService', function() {
     beforeEach(module('blogApp'));
 
-    var postService;
+    var service;
 
-    beforeEach(inject(function(PostService) {
-        postService = PostService;
+    beforeEach(inject(function(postService) {
+        service = postService;
     }));
 
     it('should load default items', function() {
-        expect(postService.list()).toEqual([{
+        expect(service.list()).toEqual([{
             id: 1,
             title: 'Item 0'
         }, {
@@ -18,15 +18,15 @@ describe('Service: PostService', function() {
     });
 
     it('should add items in list', function () {
-        postService.add({
+        service.add({
             id: 3,
             title: 'Item 2'
         });
-        expect(postService.list()).toContain({
+        expect(service.list()).toContain({
             id: 3,
             title: 'Item 2'
         });
-        expect(postService.list()).toEqual([{
+        expect(service.list()).toEqual([{
             id: 1,
             title: 'Item 0'
         }, {

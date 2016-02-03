@@ -1,6 +1,6 @@
 angular
     .module('todoAppMock', [])
-    .factory('TodoService', [function() {
+    .factory('todoService', [function() {
         return {
             list: function() {
                 return [{

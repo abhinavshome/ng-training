@@ -1,31 +1,30 @@
-describe('MainCtrl test with server calls', function() {
+describe('mainCtrl test with server calls', function() {
 
     beforeEach(module('serverApp'));
-    
-    var ctrl, mockBackend;
-    
+
+    var scope = {},
+        mockBackend;
+
     beforeEach(inject(function($controller, $httpBackend) {
         mockBackend = $httpBackend;
         mockBackend.expectGET('/api/note')
             .respond([{
                 id: 1,
                 label: 'Mock1'
-            },
-            {
+            }, {
                 id: 2,
                 label: 'Mock2'
-            }
-            ]);
-        ctrl = $controller('MainCtrl');
+            }]);
+        $controller('mainCtrl', scope);
     }));
-    
-    it('should load items from server', function() { 
-    	// Initially, before the server responds,
+
+    it('should load items from server', function() {
+        // Initially, before the server responds,
         // the items should be empty 
-        expect(ctrl.items).toEqual([]);
+        expect(scope.items).toEqual([]);
         // Simulate a server response
         mockBackend.flush();
-        expect(ctrl.items).toEqual(['Mock1', 'Mock2']);
+        expect(scope.items).toEqual(['Mock1', 'Mock2']);
     });
 
     afterEach(function() {

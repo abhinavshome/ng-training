@@ -2,22 +2,23 @@ describe('TodoCtrl with mocking service using spies', function() {
 
     beforeEach(module('todoApp'));
 
-    var ctrl, todoService;
-    beforeEach(inject(function($controller, TodoService) {
-        spyOn(TodoService, 'list').and.returnValue([{
+    var scope = {},
+        service;
+    beforeEach(inject(function($controller, todoService) {
+        spyOn(todoService, 'list').and.returnValue([{
             id: 1,
             label: 'Mock'
         }]);
-        todoService = TodoService;
-        ctrl = $controller('TodoCtrl');
+        service = todoService;
+        $controller('TodoCtrl', scope);
     }));
 
     it('should load real items', function() {
-        expect(ctrl.items).toEqual([{
+        expect(scope.items).toEqual([{
             id: 1,
             label: 'Mock'
         }]);
-        expect(todoService.list).toHaveBeenCalled();
-        expect(todoService.list.calls.count()).toEqual(1);
+        expect(service.list).toHaveBeenCalled();
+        expect(service.list.calls.count()).toEqual(1);
     });
 });

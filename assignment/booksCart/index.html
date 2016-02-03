@@ -1,0 +1,64 @@
+<html ng-app="bookCart">
+
+<head>
+    <script src="https://code.angularjs.org/1.3.11/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/bookCtrl.js"></script>
+    <script src="js/services/bookService.js"></script>
+</head>
+
+<body>
+    <div ng-controller="bookCtrl">
+        <div>
+            <h1>{{title}}</h1>
+        </div>
+        <div>
+            <h2>Create Book</h2>
+            <form name="bookForm" ng-submit="addBook()">
+                <label>Title</label>
+                <input type="text" name="title" ng-model="newBook.title" required>
+                <span ng-show="bookForm.$dirty && bookForm.title.$error.required">This field is required</span>
+                <br>
+                <label>Author</label>
+                <input type="text" ng-model="newBook.author">
+                <br>
+                <label>Price</label>
+                <input type="text" ng-model="newBook.price">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+            <h2>Edit Book</h2>
+            <form name="bookEditForm" ng-submit="updateBook()">
+                <label>Title</label>
+                <input type="text" name="title" ng-model="bookToEdit.title" required>
+                <span ng-show="bookEditForm.$dirty && bookEditForm.title.$error.required">This field is required</span>
+                <br>
+                <label>Author</label>
+                <input type="text" ng-model="bookToEdit.author">
+                <br>
+                <label>Price</label>
+                <input type="text" ng-model="bookToEdit.price">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="book in books">
+                    <td> {{book.title }} </td>
+                    <td> {{book.author}} </td>
+                    <td> {{book.price }} </td>
+                    <td>
+                        <button ng-click="showEditForm(book)">Edit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

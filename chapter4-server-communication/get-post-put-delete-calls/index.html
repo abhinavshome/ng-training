@@ -40,23 +40,23 @@
     </form>
     <h2>Edit a todo</h2>
     <form ng-submit="updateTodo()">
-            <label>Label</label>
-            <input type="text" ng-model="todoToEdit.label">
-            <br>
-            <label>Priority</label>
-            <select ng-model="todoToEdit.priority">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <br>
-            <label>Done?</label>
-            <input type="checkbox" ng-model="todoToEdit.done"/>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
+        <label>Label</label>
+        <input type="text" ng-model="todoToEdit.label">
+        <br>
+        <label>Priority</label>
+        <select ng-model="todoToEdit.priority">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br>
+        <label>Done?</label>
+        <input type="checkbox" ng-model="todoToEdit.done" />
+        <br>
+        <input type="submit" value="Submit">
+    </form>
     <h2>Todos</h2>
     <table>
         <tr>
@@ -71,9 +71,9 @@
             <td> {{todo.label}} </td>
             <td> {{todo.priority}} </td>
             <td> {{ todo.done ? '&#10003' : '&#10005' }} </td>
-            <td> 
-            <button ng-click="editTodo(todo)">edit</button> 
-            <button ng-click="deleteTodo(todo)">delete</button>
+            <td>
+                <button ng-click="editTodo(todo)">edit</button>
+                <button ng-click="deleteTodo(todo)">delete</button>
             </td>
         </tr>
     </table>

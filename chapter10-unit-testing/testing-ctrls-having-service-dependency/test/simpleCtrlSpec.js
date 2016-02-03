@@ -1,16 +1,16 @@
-describe("SimpleCtrl Test", function () {
+describe("simpleCtrl Test", function () {
 	
 	beforeEach(module('simpleApp'));
 
-	var location, ctrl;
+	var location, scope = {};
 	beforeEach(inject(function ($location, $controller) {
 		location = $location;
-		ctrl = $controller('SimpleCtrl');
+		$controller('simpleCtrl', scope);
 	}));
 
 	it('should have navigate away when clicked', function () {
 		location.path('/here');
-		ctrl.navigate();
+		scope.navigate();
 		expect(location.path()).toEqual('/some/where/else');
 	})
 

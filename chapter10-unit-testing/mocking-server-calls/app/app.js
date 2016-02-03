@@ -1,23 +1,15 @@
 angular
-    .module('todoApp', [])
-    .factory('TodoService', [function() {
-        var items = [{
-            id: 1,
-            label: 'Item 0'
-        }, {
-            id: 2,
-            label: 'Item 1'
-        }];
-        return {
-            list: function() {
-                return items;
-            },
-            add: function(item) {
-                items.push(item);
-            }
-        };
-    }])
-    .controller('TodoCtrl', ['TodoService', function(TodoService) {
-        var self = this;
-        self.items = TodoService.list();
-    }]);
+    .module('serverApp', [])
+    .controller('mainCtrl', function($scope, $http) {
+        $scope.items = [];
+        $scope.errorMessage = '';
+        $http.get('/api/note').then(function(response) {
+
+            $scope.items = response.data.map(function(n) {
+                return n.label;
+            });
+
+        }, function(errResponse) {
+            $scope.errorMessage = errResponse.data.msg;
+        });
+    });

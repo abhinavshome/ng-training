@@ -1,16 +1,16 @@
-describe('ItemCtrl with inline mock', function() {
+describe('todoCtrl with inline mock', function() {
     
     beforeEach(module('todoApp'));
     beforeEach(module('todoAppMock'));
 
-    var ctrl;
+    var scope = {};
 
     beforeEach(inject(function($controller) {
-        ctrl = $controller('TodoCtrl');
+        $controller('todoCtrl', scope);
     }));
 
     it('should load mocked out items', function() {
-        expect(ctrl.items).toEqual([{
+        expect(scope.items).toEqual([{
             id: 1,
             label: 'Mock'
         }]);

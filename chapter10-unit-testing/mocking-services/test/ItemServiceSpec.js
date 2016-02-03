@@ -1,8 +1,9 @@
 describe('ItemCtrl with inline mock', function() {
-    
+
     beforeEach(module('todoApp'));
 
-    var ctrl, mockService;
+    var scope = {},
+        mockService;
 
     beforeEach(module(function($provide) {
         mockService = {
@@ -14,17 +15,17 @@ describe('ItemCtrl with inline mock', function() {
                 }];
             }
         };
-        $provide.value('TodoService', mockService);
+        $provide.value('todoService', mockService);
     }));
 
     beforeEach(inject(function($controller) {
-        ctrl = $controller('TodoCtrl');
+        $controller('todoCtrl', scope);
     }));
 
     it('should load items', function() {
-        expect(ctrl.items).toEqual([{
-                    id: 1,
-                    label: 'Mock'
-                }]);
+        expect(scope.items).toEqual([{
+            id: 1,
+            label: 'Mock'
+        }]);
     });
 });
