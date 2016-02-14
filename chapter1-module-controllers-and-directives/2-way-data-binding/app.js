@@ -7,7 +7,4 @@ angular
             $scope.blogTitle = "My Blog Posts";
         }
 
-        $scope.welcome = function(str) {
-        	return 'Welcome ' + str;
-        }
     });

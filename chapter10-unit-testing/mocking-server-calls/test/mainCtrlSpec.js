@@ -15,7 +15,7 @@ describe('mainCtrl test with server calls', function() {
                 id: 2,
                 label: 'Mock2'
             }]);
-        $controller('mainCtrl', scope);
+        $controller('mainCtrl', {$scope: scope});
     }));
 
     it('should load items from server', function() {

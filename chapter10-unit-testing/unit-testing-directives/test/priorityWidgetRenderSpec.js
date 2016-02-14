@@ -1,5 +1,4 @@
-// File: chapter12/stockDirectiveRenderSpec.js
-describe('Priority Widget Directive Rendering', function() {
+describe('Stock Widget Directive Rendering', function() {
 
     beforeEach(module('todoApp'));
 

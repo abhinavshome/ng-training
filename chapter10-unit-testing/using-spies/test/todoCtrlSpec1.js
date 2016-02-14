@@ -10,7 +10,7 @@ describe('TodoCtrl with mocking service using spies', function() {
             label: 'Mock'
         }]);
         service = todoService;
-        $controller('TodoCtrl', scope);
+        $controller('todoCtrl', {$scope: scope});
     }));
 
     it('should load real items', function() {

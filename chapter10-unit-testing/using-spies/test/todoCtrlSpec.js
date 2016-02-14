@@ -9,7 +9,7 @@ describe('TodoCtrl with real service and spies', function() {
         spyOn(todoService, 'list').and.callThrough();
         
         service = todoService;
-        $controller('todoCtrl', scope);
+        $controller('todoCtrl', {$scope: scope});
     }));
 
     it('should load real items', function() {

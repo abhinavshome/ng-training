@@ -18,5 +18,5 @@ angular
         };
     })
     .controller('postCtrl', function($scope, postService) {
-        $scope.posts = PostService.list();
+        $scope.posts = postService.list();
     });

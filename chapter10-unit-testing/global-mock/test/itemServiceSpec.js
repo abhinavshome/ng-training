@@ -6,7 +6,7 @@ describe('todoCtrl with inline mock', function() {
     var scope = {};
 
     beforeEach(inject(function($controller) {
-        $controller('todoCtrl', scope);
+        $controller('todoCtrl', {$scope:scope});
     }));
 
     it('should load mocked out items', function() {

@@ -1,5 +1,4 @@
-// File: chapter12/stockDirectiveBehaviorSpec.js
-describe('Stock Widget Directive Behavior', function() {
+describe('Priority Widget Directive Behavior', function() {
 
     beforeEach(module('todoApp'));
 
@@ -39,8 +38,6 @@ describe('Stock Widget Directive Behavior', function() {
             // Step 4
             var element = compile('<priority-widget item="todo" width-per-point="20" color-function="colorChooser(priority)"></priority-widget>')(scope);
 
-
-            var element = compile('<priority-widget item="todo" width-per-point="20"></priority-widget>')(scope);
 
             // Step 5
             scope.$digest();

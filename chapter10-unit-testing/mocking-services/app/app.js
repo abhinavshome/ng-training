@@ -19,4 +19,4 @@ angular
     })
     .controller('todoCtrl', function($scope, todoService) {
         $scope.items = todoService.list();
-    }]);
+    });
