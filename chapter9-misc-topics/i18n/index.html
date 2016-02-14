@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Javascript library files -->
     <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-locale_es.js"></script>
     <script src="lib/angular-translate.min.js"></script>
     <!-- App Javascript files -->
     <script src="js/app.js"></script>
@@ -16,10 +17,16 @@
     <div ng-controller="languageCtrl">
         <button ng-click="changeLanguage('de')" translate="BUTTON_TEXT_DE"></button>
         <button ng-click="changeLanguage('en')" translate="BUTTON_TEXT_EN"></button>
+
+        <h1>{{now | date}}</h1>
+        <h1>{{ 123 | number}}</h1>
+        <h1>{{ 123 | currency}}</h1>
     </div>
-    <div ng-controller="mainCtrl">
+    <div>
         <h2>{{ 'HEADLINE' | translate }}</h2>
         <p>{{ 'INTRO_TEXT' | translate }}</p>
+        
+
     </div>
 </body>
 

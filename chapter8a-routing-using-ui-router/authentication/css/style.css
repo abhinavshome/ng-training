@@ -1,0 +1,30 @@
+th {
+    background-color: navy;
+    padding: 5px;
+}
+
+td {
+    background-color: orange;
+    padding: 5px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    background-color: orange;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.menu a.active {
+    border-bottom: 2px solid black;
+}

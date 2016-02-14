@@ -6,4 +6,8 @@ angular
         $scope.resetTitle = function() {
             $scope.blogTitle = "My Blog Posts";
         }
+
+        $scope.welcome = function(str) {
+        	return 'Welcome ' + str;
+        }
     });

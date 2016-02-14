@@ -5,7 +5,7 @@ describe("simpleCtrl Test", function () {
 	var location, scope = {};
 	beforeEach(inject(function ($location, $controller) {
 		location = $location;
-		$controller('simpleCtrl', scope);
+		$controller('simpleCtrl', { $scope: scope});
 	}));
 
 	it('should have navigate away when clicked', function () {

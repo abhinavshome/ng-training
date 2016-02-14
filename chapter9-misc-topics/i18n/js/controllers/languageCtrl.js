@@ -4,4 +4,6 @@ angular
         $scope.changeLanguage = function(langKey) {
             $translate.use(langKey);
         };
+
+        $scope.now = new Date();
     });

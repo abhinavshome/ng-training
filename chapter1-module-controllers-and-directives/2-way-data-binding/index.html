@@ -4,7 +4,7 @@
 
 <head>
     <title>ng-training</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script src="../../resources/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 
@@ -13,7 +13,8 @@
     <input type="text" ng-model="blogTitle">
 	<br><br>
 	<button ng-click="resetTitle()">Reset Title</button>
-
+	
+	<div>{{welcome(blogTitle)}}</div>
 </body>
 
 </html>

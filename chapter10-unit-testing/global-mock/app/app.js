@@ -18,5 +18,5 @@ angular
         };
     })
     .controller('todoCtrl', function($scope, todoService) {
-        $scope.items = TodoService.list();
+        $scope.items = todoService.list();
     });

@@ -130,7 +130,7 @@ Run the backend server and angular frontend server as done for Chapter 4 and 8. 
 
 ```
 npm install protractor -g
-webdrver-manager update
+webdriver-manager update
 ```
 
 In order to run e2e tests you need to have selenium server running. In a separate tab you can run selenium server

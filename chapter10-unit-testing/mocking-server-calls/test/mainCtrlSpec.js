@@ -24,7 +24,13 @@ describe('mainCtrl test with server calls', function() {
         expect(scope.items).toEqual([]);
         // Simulate a server response
         mockBackend.flush();
-        expect(scope.items).toEqual(['Mock1', 'Mock2']);
+        expect(scope.items).toEqual([{
+                id: 1,
+                label: 'Mock1'
+            }, {
+                id: 2,
+                label: 'Mock2'
+            }]);
     });
 
     afterEach(function() {

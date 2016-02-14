@@ -5,9 +5,7 @@ angular
         $scope.errorMessage = '';
         $http.get('/api/note').then(function(response) {
 
-            $scope.items = response.data.map(function(n) {
-                return n.label;
-            });
+            $scope.items = response.data;
 
         }, function(errResponse) {
             $scope.errorMessage = errResponse.data.msg;

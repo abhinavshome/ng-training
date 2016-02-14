@@ -1,0 +1,33 @@
+<html ng-app="demoApp">
+
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+    
+	<!-- Javascript library files -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- App Javascript files -->
+    <script src="js/app.js"></script>
+    <script src="js/states.js"></script>
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/aboutCtrl.js"></script>
+    <script src="js/controllers/menuCtrl.js"></script>
+    <script src="js/controllers/productsCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/services/authService.js"></script>
+</head>
+
+<body>
+    <div class="menu" ng-controller="menuCtrl">
+        <a ng-class="{active: isActiveState('home')}" ui-sref="home">Home</a>
+        <a ng-class="{active: isActiveState('about')}" ui-sref="about">About</a>
+        <a ng-class="{active: isActiveState('products')}" ui-sref="products">Products</a>
+        <a ng-class="{active: isActiveState('login')}" ui-sref="login">Login</a>
+    </div>
+
+    <div ui-view></div>
+
+</body>
+</html>

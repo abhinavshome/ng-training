@@ -36,8 +36,8 @@ angular
                 console.log(scope);
                 scope.widthPerPoint = 10;
                 scope.getColorCode =  function(point) {
-                    if(scope.colorFunction) {
-                        return attributes.colorFunction({priority: point})
+                    if(attributes.colorFunction) {
+                        return scope.colorFunction({priority: point})
                     }
 
                     if (point < 3) return 'yellow';

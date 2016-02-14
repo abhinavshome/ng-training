@@ -19,7 +19,7 @@ describe('ItemCtrl with inline mock', function() {
     }));
 
     beforeEach(inject(function($controller) {
-        $controller('todoCtrl', scope);
+        $controller('todoCtrl', {$scope: scope});
     }));
 
     it('should load items', function() {
